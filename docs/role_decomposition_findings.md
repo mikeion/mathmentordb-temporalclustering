@@ -118,7 +118,17 @@ The following figures demonstrate the role decomposition findings. All figures a
 
 ![Feature Profiles](../figures/2023_conversations_two-participants/role_15d/figure2_feature_profiles.png)
 
-**What you're seeing**: Heatmap showing mean values for all 15 features across the 2 clusters. Green = higher values, Red = lower values. Numbers show actual (non-normalized) values.
+**How to read this heatmap**:
+- **Each row** = one of the 15 temporal features
+- **Each column** = one cluster (Cluster 0 on left, Cluster 1 on right)
+- **Colors** = relative scale within each row (green = high, red = low)
+- **Numbers** = actual mean values for that feature in that cluster
+- **Row groupings**:
+  - Top 5 rows: Conversation-level features
+  - Middle 5 rows: Tutor-specific features
+  - Bottom 5 rows: Student-specific features
+
+**The question this answers**: "What are the average feature values for conversations in each cluster?"
 
 **Key observations**:
 
@@ -132,15 +142,36 @@ The following figures demonstrate the role decomposition findings. All figures a
 - Student Timing Consistency: 0.968 (nearly perfect regularity)
 - Students maintain remarkably consistent message timing
 
-**Notice**: The tutor rows (middle section) show similar values across both clusters - confirming tutors don't drive the distinction.
+**The critical insight - look at the color patterns**:
+1. **Top 5 rows (Conversation)**: Some green/red differences, but moderate
+2. **Middle 5 rows (Tutor)**: Almost identical colors across both columns - tutors are the same!
+3. **Bottom 5 rows (Student)**: Dramatic color flips - this is where clusters differ
 
-**Interpretation**:
-- Cluster 1 students send messages like clockwork - steady, predictable intervals
-- Cluster 0 students are more variable - sometimes quick replies, sometimes gaps
-- This could indicate Cluster 1 = highly engaged/focused students, or students working through structured problem sets
-- Cluster 0 = natural conversational ebb and flow
+Specifically, look at the bottom two rows:
+- "Timing Consistency Student": Red (0.439) vs Green (0.968) - nearly doubled!
+- "Burst Coefficient Student": Greenish (0.077) vs Deep Red (-0.942) - complete opposite!
 
-**Research question**: Does Cluster 1's consistency predict better learning outcomes? Or does it just reflect certain types of problems (e.g., working through a problem set vs exploratory conversation)?
+**Interpretation - Two Student Strategies**:
+
+**Cluster 0 (93%)**: "Natural Conversational Flow"
+- Student burst = 0.077: Messages come in small bursts with some gaps
+- Student consistency = 0.439: Moderate regularity
+- Example: Student thinks, asks question, waits for response, thinks again
+- Pattern: Natural ebb and flow as student processes information
+
+**Cluster 1 (7%)**: "Methodical Worker"
+- Student burst = -0.942: Extremely anti-bursty (steady, even spacing)
+- Student consistency = 0.968: Nearly perfect regularity
+- Example: Student working through a problem set, sending a message every 2-3 minutes like clockwork
+- Pattern: Sustained, focused engagement with consistent pacing
+
+**Why tutors look the same**: In both clusters, tutors maintain similar response patterns because they're adapting to whatever the student does. A good tutor doesn't impose their own rhythm - they follow the student's lead.
+
+**Research questions this raises**:
+1. Does Cluster 1's consistency predict better learning outcomes?
+2. Or does it just reflect problem type (structured exercises vs open exploration)?
+3. Are Cluster 1 students more engaged, or just working on different kinds of problems?
+4. Do certain tutors encourage more consistent student engagement?
 
 ---
 
