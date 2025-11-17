@@ -44,6 +44,9 @@ The 15D role-specific clustering reveals a **striking asymmetry**:
 - `timing_consistency_student`: η² = **0.478**
 - `response_acceleration_student`: η² = 0.003
 - `memory_coefficient_student`: η² = 0.002
+- `cluster_density_student`: NaN (all values = 0, no variance)*
+
+*Note: Cluster density requires conversations longer than 5 minutes to compute meaningful sliding window statistics. Most conversations in this dataset are shorter, so all values are 0 (cannot compute effect size).
 
 **Conversation Features** (weak):
 - `burst_coefficient`: η² = 0.070
@@ -135,12 +138,22 @@ The following figures demonstrate the role decomposition findings. All figures a
 **Cluster 0 (93% of conversations)** - "Standard Engagement":
 - Student Burst Coefficient: 0.077 (slightly bursty)
 - Student Timing Consistency: 0.439 (moderate regularity)
+- Cluster Density: 0.0 (conversations too short for 5-min windows)*
 - Shows typical variability in student pacing
 
 **Cluster 1 (7% of conversations)** - "Steady & Consistent":
 - Student Burst Coefficient: -0.942 (extremely anti-bursty, very steady flow)
 - Student Timing Consistency: 0.968 (nearly perfect regularity)
+- Cluster Density: 0.0 (conversations too short for 5-min windows)*
 - Students maintain remarkably consistent message timing
+
+*Cluster Density appears as 0.0 for all conversations because it requires conversations longer than 5 minutes. Here's why:
+
+Cluster Density measures temporal "clumpiness" by sliding a 5-minute window across the conversation and counting messages in each window. It then computes Variance(counts) / Mean(counts) across windows. This requires:
+- Multiple windows to compare (conversation > 5 minutes)
+- Enough messages in each window to have meaningful variance
+
+Most tutoring conversations in this dataset are brief (under 5 minutes), so the sliding window approach returns 0.0. This feature doesn't contribute to clustering in this dataset, which is why it's excluded from the effect size calculations (NaN).
 
 **The critical insight - look at the color patterns**:
 1. **Top 5 rows (Conversation)**: Some green/red differences, but moderate
