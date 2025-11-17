@@ -149,11 +149,16 @@ The following figures demonstrate the role decomposition findings. All figures a
 
 *Note on Cluster Density implementation:
 
-**Updated implementation** (as of latest version): Cluster Density now uses an **adaptive window** (20% of participant's message span, bounded between 60-300 seconds). This ensures the metric works for role-specific features where one participant's messages may span a short duration even in long conversations.
+**Current status**: Cluster Density is **not a useful feature for this dataset** due to the nature of short tutoring exchanges.
 
-**Previous issue**: The original 5-minute fixed window failed for role-specific analysis because filtering to student-only timestamps often resulted in spans <5 minutes, making the sliding window unable to compute meaningful variance.
+**Why it fails**: Even with adaptive windows (30% of span, min 10s), cluster density requires:
+- Multiple messages from one participant
+- Messages spanning enough time for sliding windows
+- Variation in message density across windows
 
-**Current behavior**: With adaptive windows, cluster density can now capture temporal clumpiness at appropriate scales for each participant. However, it may still show low variance if participants maintain very steady message spacing (which itself is informative!).
+In online tutoring, students often send just a few messages spread across a conversation, resulting in insufficient data for sliding window analysis. Only ~0.4% of conversations have non-zero student cluster density.
+
+**Design choice**: We kept this feature in the pipeline for datasets with longer, denser message sequences (e.g., chat logs, support conversations). For tutoring data, the other 4 features (burst coefficient, timing consistency, response acceleration, memory coefficient) provide sufficient signal.
 
 **The critical insight - look at the color patterns**:
 1. **Top 5 rows (Conversation)**: Some green/red differences, but moderate

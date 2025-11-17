@@ -72,15 +72,17 @@ def calculate_cluster_density(timestamps, window_minutes=None):
     if duration < 1:  # Less than 1 second span
         return 0.0
 
-    # Adaptive window: 20% of duration, bounded [60s, 300s]
+    # Adaptive window: 30% of duration, min 10s, max 300s
+    # Lower bound allows very short conversations to still get a window
     if window_minutes is None:
-        window_size = duration * 0.2
-        window_size = max(60, min(300, window_size))
+        window_size = duration * 0.3
+        window_size = max(10, min(300, window_size))
     else:
         window_size = window_minutes * 60
 
-    # Need room for at least 2 windows with overlap
-    if duration < window_size * 1.5:
+    # Need room for at least 1.5 windows (with 50% overlap)
+    # This means duration >= window_size (one full window)
+    if duration < window_size:
         return 0.0
 
     # Sliding window counts

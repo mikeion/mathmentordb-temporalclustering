@@ -71,10 +71,10 @@ def calculate_cluster_density(timestamps, window_minutes=None):
     if span < 1:
         return 0.0
 
-    # Adaptive window: 20% of span, bounded [60s, 300s]
+    # Adaptive window: 30% of span, bounded [10s, 300s]
     if window_minutes is None:
-        window_size = span * 0.2
-        window_size = max(60, min(300, window_size))
+        window_size = span * 0.3
+        window_size = max(10, min(300, window_size))
     else:
         window_size = window_minutes * 60
 

@@ -2,7 +2,7 @@
   "metadata": {
     "n_conversations": 6964,
     "n_clusters": 2,
-    "method": "hierarchical",
+    "method": "kmeans",
     "feature_columns": [
       "burst_coefficient",
       "cluster_density",
@@ -26,129 +26,129 @@
   "optimal_k_analysis": [
     {
       "k": 2,
-      "inertia": 70452.30945286636,
-      "silhouette": 0.20497720900274435,
-      "calinski_harabasz": 1296.081118898209,
-      "davies_bouldin": 1.917151697292653,
-      "gap_statistic": 4.591797838694294,
-      "gap_error": 0.10842232569568985
+      "inertia": 83550.74924248432,
+      "silhouette": 0.9709243329874251,
+      "calinski_harabasz": 1742.2968087496681,
+      "davies_bouldin": 0.020044630605175362,
+      "gap_statistic": 7.775213575609046,
+      "gap_error": 0.22981119164963046
     },
     {
       "k": 3,
-      "inertia": 63012.294994563985,
-      "silhouette": 0.23000097681295267,
-      "calinski_harabasz": 1135.4090878225797,
-      "davies_bouldin": 1.6641499734549188,
-      "gap_statistic": 4.424266306163151,
-      "gap_error": 0.12120632283278523
+      "inertia": 70443.02273290974,
+      "silhouette": 0.20491077440657354,
+      "calinski_harabasz": 1680.7384154516194,
+      "davies_bouldin": 1.285550692727466,
+      "gap_statistic": 7.108357516834742,
+      "gap_error": 0.1386240131838303
     },
     {
       "k": 4,
-      "inertia": 57239.12936792117,
-      "silhouette": 0.23091547600388584,
-      "calinski_harabasz": 1067.155403422174,
-      "davies_bouldin": 1.2463638148331018,
-      "gap_statistic": 4.700715606634027,
-      "gap_error": 0.11353995921745912
+      "inertia": 63003.87615366814,
+      "silhouette": 0.23344975477398686,
+      "calinski_harabasz": 1526.5504539626484,
+      "davies_bouldin": 1.2393450751393245,
+      "gap_statistic": 6.680508345741117,
+      "gap_error": 0.22305350527918452
     },
     {
       "k": 5,
-      "inertia": 50375.997706787995,
-      "silhouette": 0.18841653981749354,
-      "calinski_harabasz": 1146.298799161064,
-      "davies_bouldin": 1.4931190995151458,
-      "gap_statistic": -2.626792481678481,
-      "gap_error": 0.13638494488408298
+      "inertia": 57230.82246420891,
+      "silhouette": 0.23397103799806088,
+      "calinski_harabasz": 1435.7210629091132,
+      "davies_bouldin": 0.9893836643205727,
+      "gap_statistic": 6.853481654472328,
+      "gap_error": 0.15995885250053682
     },
     {
       "k": 6,
-      "inertia": 47235.912126569696,
-      "silhouette": 0.18835255125899825,
-      "calinski_harabasz": 1070.3677183185669,
-      "davies_bouldin": 1.1393408371801343,
-      "gap_statistic": 4.462613254903136,
-      "gap_error": 0.05240792853853249
+      "inertia": 51723.16972423708,
+      "silhouette": 0.18660864468394686,
+      "calinski_harabasz": 1418.88065141719,
+      "davies_bouldin": 1.140564201455329,
+      "gap_statistic": 6.444150753447202,
+      "gap_error": 0.13081881661002964
     },
     {
       "k": 7,
-      "inertia": 47439.61008075951,
-      "silhouette": 0.1844926446808107,
-      "calinski_harabasz": 883.0413576785776,
-      "davies_bouldin": 1.372673746482344,
-      "gap_statistic": 4.1983260074640505,
-      "gap_error": 0.12240037870311803
+      "inertia": 47266.338277555944,
+      "silhouette": 0.18494855646873987,
+      "calinski_harabasz": 1403.031854077349,
+      "davies_bouldin": 1.321410188531287,
+      "gap_statistic": -0.17144578359757912,
+      "gap_error": 0.13795735261759468
     },
     {
       "k": 8,
-      "inertia": 41671.99526031739,
-      "silhouette": 0.18453511762279373,
-      "calinski_harabasz": 999.0575751041989,
-      "davies_bouldin": 1.1996140768100498,
-      "gap_statistic": 4.37325204200239,
-      "gap_error": 0.10909186873946655
+      "inertia": 44121.12070466056,
+      "silhouette": 0.18424286275358495,
+      "calinski_harabasz": 1358.980093722467,
+      "davies_bouldin": 1.0600993965258139,
+      "gap_statistic": 6.711469673956183,
+      "gap_error": 0.11069260809752526
     },
     {
       "k": 9,
-      "inertia": 39204.3847088329,
-      "silhouette": 0.1877470787226433,
-      "calinski_harabasz": 983.7857646144871,
-      "davies_bouldin": 1.1223602371188184,
-      "gap_statistic": 2.713030516143071,
-      "gap_error": 0.06718436877620286
+      "inertia": 41666.36795321395,
+      "silhouette": 0.18406339279371034,
+      "calinski_harabasz": 1310.2012547865106,
+      "davies_bouldin": 1.0681166106664424,
+      "gap_statistic": 6.511739815579963,
+      "gap_error": 0.16618003844672352
     },
     {
       "k": 10,
-      "inertia": 37754.064058231146,
-      "silhouette": 0.1926954271523697,
-      "calinski_harabasz": 937.6187405018869,
-      "davies_bouldin": 1.1384553098395553,
-      "gap_statistic": 4.563094122413937,
-      "gap_error": 0.09143374118712667
+      "inertia": 39198.52452455392,
+      "silhouette": 0.18790065871098946,
+      "calinski_harabasz": 1286.4111539614346,
+      "davies_bouldin": 1.0147576724132348,
+      "gap_statistic": 4.913373621993177,
+      "gap_error": 0.10324446837366692
     },
     {
       "k": 11,
-      "inertia": 35340.5458041514,
-      "silhouette": 0.19455583733115683,
-      "calinski_harabasz": 948.8407193313454,
-      "davies_bouldin": 1.0808032517979989,
-      "gap_statistic": 2.915015529198533,
-      "gap_error": 0.0936544158857422
+      "inertia": 37502.408846751394,
+      "silhouette": 0.19323621319708487,
+      "calinski_harabasz": 1241.4061247191037,
+      "davies_bouldin": 1.0767862556404832,
+      "gap_statistic": 4.991436129696102,
+      "gap_error": 0.07489702103653413
     },
     {
       "k": 12,
-      "inertia": 33989.916948007434,
-      "silhouette": 0.18435215159034082,
-      "calinski_harabasz": 921.8461134318429,
-      "davies_bouldin": 1.1825654560265186,
-      "gap_statistic": 2.98123318087228,
-      "gap_error": 0.05184223037799642
+      "inertia": 35335.24223757951,
+      "silhouette": 0.19446441670960993,
+      "calinski_harabasz": 1236.3564233153586,
+      "davies_bouldin": 0.994527266810865,
+      "gap_statistic": 5.0430457292444775,
+      "gap_error": 0.10795883209633217
     },
     {
       "k": 13,
-      "inertia": 32663.019379857393,
-      "silhouette": 0.20176617986883089,
-      "calinski_harabasz": 902.7551825904179,
-      "davies_bouldin": 1.1548880901392826,
-      "gap_statistic": 2.9951196249794414,
-      "gap_error": 0.06982302017466117
+      "inertia": 34244.4218982115,
+      "silhouette": 0.1937267494976839,
+      "calinski_harabasz": 1187.7085005461986,
+      "davies_bouldin": 1.0082748724427757,
+      "gap_statistic": 5.130534259291032,
+      "gap_error": 0.07610820466521155
     },
     {
       "k": 14,
-      "inertia": 31400.222341846187,
-      "silhouette": 0.19514248095637893,
-      "calinski_harabasz": 888.2026304482797,
-      "davies_bouldin": 1.1808711836517591,
-      "gap_statistic": 3.1522761095778984,
-      "gap_error": 0.0618034781576797
+      "inertia": 32421.613356570968,
+      "silhouette": 0.1947179792932738,
+      "calinski_harabasz": 1187.8823743914036,
+      "davies_bouldin": 1.0515036673738323,
+      "gap_statistic": 5.170586264359099,
+      "gap_error": 0.08548520714875629
     },
     {
       "k": 15,
-      "inertia": 29992.48782806293,
-      "silhouette": 0.18067802275980033,
-      "calinski_harabasz": 886.6424909250649,
-      "davies_bouldin": 1.1629585696736846,
-      "gap_statistic": 3.170649212297311,
-      "gap_error": 0.05292002104763971
+      "inertia": 31096.244251043725,
+      "silhouette": 0.19295928383376582,
+      "calinski_harabasz": 1171.0307675504157,
+      "davies_bouldin": 1.1212881174543652,
+      "gap_statistic": 5.232037296748301,
+      "gap_error": 0.0755057240983478
     }
   ],
   "method_comparison": {
@@ -156,136 +156,136 @@
     "hierarchical": {
       "n_clusters": 2,
       "linkage": "ward",
-      "silhouette": 0.39921073531156365
+      "silhouette": 0.9709243329874251
     },
     "kmeans": {
       "n_clusters": 2,
-      "silhouette": 0.20497720900274435,
-      "inertia": 70452.30945286636
+      "silhouette": 0.9709243329874251,
+      "inertia": 83550.74924248432
     },
-    "recommended": "hierarchical"
+    "recommended": "kmeans"
   },
   "cluster_statistics": {
     "Cluster_0": {
       "cluster_id": 0,
-      "size": 6474,
-      "percentage": 92.96381390005743,
+      "size": 6963,
+      "percentage": 99.98564043653073,
       "mean_features": {
-        "burst_coefficient": 0.14060317336087502,
+        "burst_coefficient": 0.12435750871293227,
         "cluster_density": 0.0,
-        "response_acceleration": -0.002701022297708982,
-        "memory_coefficient": -0.006483843292258339,
-        "timing_consistency": 0.4296984133195625,
-        "burst_coefficient_tutor": -0.17693290852961394,
+        "response_acceleration": 0.026541003028742342,
+        "memory_coefficient": -0.02063513133109038,
+        "timing_consistency": 0.43782124564353386,
+        "burst_coefficient_tutor": -0.18780267356433747,
         "cluster_density_tutor": 0.0,
-        "response_acceleration_tutor": 0.000695419232742225,
-        "memory_coefficient_tutor": -0.09430939673957854,
-        "timing_consistency_tutor": 0.5091491851885017,
-        "burst_coefficient_student": 0.07671498777366927,
+        "response_acceleration_tutor": 0.0031892716014424354,
+        "memory_coefficient_tutor": -0.09132477797908886,
+        "timing_consistency_tutor": 0.5056491466342441,
+        "burst_coefficient_student": 0.004964504824004727,
         "cluster_density_student": 0.0,
-        "response_acceleration_student": 0.01990055544156622,
-        "memory_coefficient_student": -0.08367728373560596,
-        "timing_consistency_student": 0.4391679926747965
+        "response_acceleration_student": 0.02808886326027606,
+        "memory_coefficient_student": -0.07843438886170884,
+        "timing_consistency_student": 0.47626254149866826
       }
     },
     "Cluster_1": {
       "cluster_id": 1,
-      "size": 490,
-      "percentage": 7.0361860999425625,
+      "size": 1,
+      "percentage": 0.014359563469270534,
       "mean_features": {
-        "burst_coefficient": -0.08934297937553368,
-        "cluster_density": 0.0,
-        "response_acceleration": 0.4129345334168748,
-        "memory_coefficient": -0.20735692366349232,
-        "timing_consistency": 0.5446714896877668,
-        "burst_coefficient_tutor": -0.329728283430184,
-        "cluster_density_tutor": 0.0,
-        "response_acceleration_tutor": 0.03593670510139526,
-        "memory_coefficient_tutor": -0.05171793179298186,
-        "timing_consistency_tutor": 0.4587416927355002,
-        "burst_coefficient_student": -0.9421202476725385,
-        "cluster_density_student": 0.0,
-        "response_acceleration_student": 0.1368883673432853,
-        "memory_coefficient_student": -0.008847998585930534,
-        "timing_consistency_student": 0.9659580830199428
+        "burst_coefficient": 0.5855512761458967,
+        "cluster_density": 4.691489361702128,
+        "response_acceleration": 0.046498929767813266,
+        "memory_coefficient": 0.10112538919054948,
+        "timing_consistency": 0.20722436192705165,
+        "burst_coefficient_tutor": 0.639507326971202,
+        "cluster_density_tutor": 0.8181818181818182,
+        "response_acceleration_tutor": -0.09576854838683621,
+        "memory_coefficient_tutor": -0.006392002196905845,
+        "timing_consistency_tutor": 0.180246336514399,
+        "burst_coefficient_student": 0.44606239764602224,
+        "cluster_density_student": 4.685897435897436,
+        "response_acceleration_student": 0.3287410456072891,
+        "memory_coefficient_student": 0.07639543265982589,
+        "timing_consistency_student": 0.27696880117698885
       }
     }
   },
   "effect_sizes": {
     "burst_coefficient": {
-      "eta_squared": 0.07000492855267855,
-      "f_statistic": 524.0611778998604,
-      "p_value": 6.891294072600711e-112
+      "eta_squared": 0.0006181171600414417,
+      "f_statistic": 4.305993276543772,
+      "p_value": 0.03801495126163469
     },
     "cluster_density": {
-      "eta_squared": NaN,
-      "f_statistic": NaN,
-      "p_value": NaN
+      "eta_squared": 1.0000000000001668,
+      "f_statistic": Infinity,
+      "p_value": 0.0
     },
     "response_acceleration": {
-      "eta_squared": 0.022175984363352715,
-      "f_statistic": 157.89058222009518,
-      "p_value": 7.987359001989408e-36
+      "eta_squared": 1.122318160070526e-07,
+      "f_statistic": 0.0007813579907343271,
+      "p_value": 0.9777006125504049
     },
     "memory_coefficient": {
-      "eta_squared": 0.015650685924815128,
-      "f_statistic": 110.69248878476881,
-      "p_value": 1.076386309368882e-25
+      "eta_squared": 1.2622067819129173e-05,
+      "f_statistic": 0.08787594533291844,
+      "p_value": 0.7669038620664066
     },
     "timing_consistency": {
-      "eta_squared": 0.0700049285526785,
-      "f_statistic": 524.0611778998602,
-      "p_value": 6.891294072600711e-112
+      "eta_squared": 0.0006181171600414416,
+      "f_statistic": 4.30599327654377,
+      "p_value": 0.03801495126163469
     },
     "burst_coefficient_tutor": {
-      "eta_squared": 0.009147699671401027,
-      "f_statistic": 64.27424661695282,
-      "p_value": 1.2602255937991517e-15
+      "eta_squared": 0.0005886479682354383,
+      "f_statistic": 4.100580953502076,
+      "p_value": 0.042906569331036384
     },
     "cluster_density_tutor": {
-      "eta_squared": NaN,
-      "f_statistic": NaN,
-      "p_value": NaN
+      "eta_squared": 1.0000000000001976,
+      "f_statistic": Infinity,
+      "p_value": 0.0
     },
     "response_acceleration_tutor": {
-      "eta_squared": 0.0008464642484639676,
-      "f_statistic": 5.898076608790197,
-      "p_value": 0.0151825822200196
+      "eta_squared": 1.464984351948494e-05,
+      "f_statistic": 0.10199370477446928,
+      "p_value": 0.7494596844718181
     },
     "memory_coefficient_tutor": {
-      "eta_squared": 0.0008639498698982336,
-      "f_statistic": 6.020019989718512,
-      "p_value": 0.014168819123467567
+      "eta_squared": 7.540873293399197e-06,
+      "f_statistic": 0.05249995576416042,
+      "p_value": 0.8187756269209964
     },
     "timing_consistency_tutor": {
-      "eta_squared": 0.0017563632617249427,
-      "f_statistic": 12.249315275460338,
-      "p_value": 0.0004683420010323695
+      "eta_squared": 0.0001606550475603737,
+      "f_statistic": 1.118660159516466,
+      "p_value": 0.29024383589100683
     },
     "burst_coefficient_student": {
-      "eta_squared": 0.6079549991399139,
-      "f_statistic": 10796.165477754968,
-      "p_value": 0.0
+      "eta_squared": 0.00025012730731005,
+      "f_statistic": 1.741821990736923,
+      "p_value": 0.1869515289221054
     },
     "cluster_density_student": {
-      "eta_squared": NaN,
-      "f_statistic": NaN,
-      "p_value": NaN
+      "eta_squared": 0.9999999999999608,
+      "f_statistic": Infinity,
+      "p_value": 0.0
     },
     "response_acceleration_student": {
-      "eta_squared": 0.0025695824521922645,
-      "f_statistic": 17.93551982918677,
-      "p_value": 2.314585906954817e-05
+      "eta_squared": 3.725097657790602e-05,
+      "f_statistic": 0.2593509600119214,
+      "p_value": 0.6105825451360589
     },
     "memory_coefficient_student": {
-      "eta_squared": 0.002041137982906345,
-      "f_statistic": 14.239467354667502,
-      "p_value": 0.00016229576605121158
+      "eta_squared": 1.9180769133982512e-05,
+      "f_statistic": 0.13353907609297105,
+      "p_value": 0.7148015610895299
     },
     "timing_consistency_student": {
-      "eta_squared": 0.47783270145201817,
-      "f_statistic": 6370.891621822329,
-      "p_value": 0.0
+      "eta_squared": 0.00015011206904477764,
+      "f_statistic": 1.0452371273975776,
+      "p_value": 0.30664209807771464
     }
   },
   "cluster_assignments": [
@@ -339,11 +339,11 @@
     },
     {
       "conversation_id": 6952.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 6953.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 6955.0,
@@ -383,7 +383,7 @@
     },
     {
       "conversation_id": 6979.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 6989.0,
@@ -403,7 +403,7 @@
     },
     {
       "conversation_id": 7004.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 7008.0,
@@ -443,7 +443,7 @@
     },
     {
       "conversation_id": 7740.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 7742.0,
@@ -523,7 +523,7 @@
     },
     {
       "conversation_id": 7816.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 7817.0,
@@ -567,7 +567,7 @@
     },
     {
       "conversation_id": 7850.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 7851.0,
@@ -619,7 +619,7 @@
     },
     {
       "conversation_id": 7908.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 7911.0,
@@ -775,11 +775,11 @@
     },
     {
       "conversation_id": 8001.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 8002.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 8006.0,
@@ -919,7 +919,7 @@
     },
     {
       "conversation_id": 8093.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 8097.0,
@@ -935,7 +935,7 @@
     },
     {
       "conversation_id": 8106.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 8108.0,
@@ -971,7 +971,7 @@
     },
     {
       "conversation_id": 8138.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 8141.0,
@@ -1007,7 +1007,7 @@
     },
     {
       "conversation_id": 8154.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 8155.0,
@@ -1031,7 +1031,7 @@
     },
     {
       "conversation_id": 8170.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 8172.0,
@@ -1043,7 +1043,7 @@
     },
     {
       "conversation_id": 8182.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 8184.0,
@@ -1147,7 +1147,7 @@
     },
     {
       "conversation_id": 14767.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 14769.0,
@@ -1203,7 +1203,7 @@
     },
     {
       "conversation_id": 14802.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 14806.0,
@@ -1231,7 +1231,7 @@
     },
     {
       "conversation_id": 14834.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 14841.0,
@@ -1339,7 +1339,7 @@
     },
     {
       "conversation_id": 14936.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 14937.0,
@@ -1375,7 +1375,7 @@
     },
     {
       "conversation_id": 14963.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 14964.0,
@@ -1399,7 +1399,7 @@
     },
     {
       "conversation_id": 14976.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 14981.0,
@@ -1407,7 +1407,7 @@
     },
     {
       "conversation_id": 14983.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 14986.0,
@@ -1535,11 +1535,11 @@
     },
     {
       "conversation_id": 15068.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 15069.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 15074.0,
@@ -1595,7 +1595,7 @@
     },
     {
       "conversation_id": 15121.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 15122.0,
@@ -1611,7 +1611,7 @@
     },
     {
       "conversation_id": 15131.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 15134.0,
@@ -1639,7 +1639,7 @@
     },
     {
       "conversation_id": 15147.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 15148.0,
@@ -1671,7 +1671,7 @@
     },
     {
       "conversation_id": 15176.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 15177.0,
@@ -1703,7 +1703,7 @@
     },
     {
       "conversation_id": 15197.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 15198.0,
@@ -1739,7 +1739,7 @@
     },
     {
       "conversation_id": 15225.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 15229.0,
@@ -1783,7 +1783,7 @@
     },
     {
       "conversation_id": 15958.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 15959.0,
@@ -1807,7 +1807,7 @@
     },
     {
       "conversation_id": 15970.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 15971.0,
@@ -1923,7 +1923,7 @@
     },
     {
       "conversation_id": 22098.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22099.0,
@@ -1931,7 +1931,7 @@
     },
     {
       "conversation_id": 22100.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22101.0,
@@ -2051,7 +2051,7 @@
     },
     {
       "conversation_id": 22184.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22192.0,
@@ -2151,7 +2151,7 @@
     },
     {
       "conversation_id": 22267.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22268.0,
@@ -2195,7 +2195,7 @@
     },
     {
       "conversation_id": 22301.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22304.0,
@@ -2247,7 +2247,7 @@
     },
     {
       "conversation_id": 22333.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22337.0,
@@ -2391,7 +2391,7 @@
     },
     {
       "conversation_id": 22446.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22449.0,
@@ -2483,7 +2483,7 @@
     },
     {
       "conversation_id": 22534.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22535.0,
@@ -2491,7 +2491,7 @@
     },
     {
       "conversation_id": 22537.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22538.0,
@@ -2567,7 +2567,7 @@
     },
     {
       "conversation_id": 22604.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22607.0,
@@ -2623,7 +2623,7 @@
     },
     {
       "conversation_id": 22643.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22646.0,
@@ -2639,7 +2639,7 @@
     },
     {
       "conversation_id": 22658.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22659.0,
@@ -2699,7 +2699,7 @@
     },
     {
       "conversation_id": 22717.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22718.0,
@@ -2731,7 +2731,7 @@
     },
     {
       "conversation_id": 22734.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 22739.0,
@@ -2851,7 +2851,7 @@
     },
     {
       "conversation_id": 28991.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 28996.0,
@@ -2927,7 +2927,7 @@
     },
     {
       "conversation_id": 29066.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29067.0,
@@ -2939,7 +2939,7 @@
     },
     {
       "conversation_id": 29073.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29076.0,
@@ -2975,11 +2975,11 @@
     },
     {
       "conversation_id": 29107.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29108.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29111.0,
@@ -2987,7 +2987,7 @@
     },
     {
       "conversation_id": 29112.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29114.0,
@@ -3011,7 +3011,7 @@
     },
     {
       "conversation_id": 29130.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29132.0,
@@ -3019,7 +3019,7 @@
     },
     {
       "conversation_id": 29135.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29136.0,
@@ -3035,7 +3035,7 @@
     },
     {
       "conversation_id": 29141.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29143.0,
@@ -3107,7 +3107,7 @@
     },
     {
       "conversation_id": 29214.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29219.0,
@@ -3167,7 +3167,7 @@
     },
     {
       "conversation_id": 29263.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29264.0,
@@ -3211,7 +3211,7 @@
     },
     {
       "conversation_id": 29288.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29289.0,
@@ -3275,7 +3275,7 @@
     },
     {
       "conversation_id": 29343.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29351.0,
@@ -3351,7 +3351,7 @@
     },
     {
       "conversation_id": 29388.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29390.0,
@@ -3431,7 +3431,7 @@
     },
     {
       "conversation_id": 29443.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29444.0,
@@ -3459,7 +3459,7 @@
     },
     {
       "conversation_id": 29455.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29459.0,
@@ -3527,11 +3527,11 @@
     },
     {
       "conversation_id": 29508.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29509.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29512.0,
@@ -3591,7 +3591,7 @@
     },
     {
       "conversation_id": 29547.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29549.0,
@@ -3607,7 +3607,7 @@
     },
     {
       "conversation_id": 29553.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29554.0,
@@ -3651,7 +3651,7 @@
     },
     {
       "conversation_id": 29589.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 29595.0,
@@ -3711,7 +3711,7 @@
     },
     {
       "conversation_id": 35811.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 35812.0,
@@ -3747,7 +3747,7 @@
     },
     {
       "conversation_id": 35867.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 35874.0,
@@ -3791,7 +3791,7 @@
     },
     {
       "conversation_id": 35925.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 35926.0,
@@ -3843,11 +3843,11 @@
     },
     {
       "conversation_id": 35974.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 35980.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 35983.0,
@@ -3967,7 +3967,7 @@
     },
     {
       "conversation_id": 36064.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36065.0,
@@ -3975,7 +3975,7 @@
     },
     {
       "conversation_id": 36067.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36073.0,
@@ -3995,7 +3995,7 @@
     },
     {
       "conversation_id": 36093.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36102.0,
@@ -4023,7 +4023,7 @@
     },
     {
       "conversation_id": 36115.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36116.0,
@@ -4139,7 +4139,7 @@
     },
     {
       "conversation_id": 36193.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36196.0,
@@ -4155,7 +4155,7 @@
     },
     {
       "conversation_id": 36199.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36203.0,
@@ -4251,7 +4251,7 @@
     },
     {
       "conversation_id": 36258.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36259.0,
@@ -4355,7 +4355,7 @@
     },
     {
       "conversation_id": 36331.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36332.0,
@@ -4479,7 +4479,7 @@
     },
     {
       "conversation_id": 36415.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36416.0,
@@ -4499,7 +4499,7 @@
     },
     {
       "conversation_id": 36427.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36431.0,
@@ -4551,11 +4551,11 @@
     },
     {
       "conversation_id": 36461.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36463.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36470.0,
@@ -4615,7 +4615,7 @@
     },
     {
       "conversation_id": 36522.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 36527.0,
@@ -4627,7 +4627,7 @@
     },
     {
       "conversation_id": 36540.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42377.0,
@@ -4747,7 +4747,7 @@
     },
     {
       "conversation_id": 42464.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42468.0,
@@ -4811,7 +4811,7 @@
     },
     {
       "conversation_id": 42512.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42518.0,
@@ -4879,7 +4879,7 @@
     },
     {
       "conversation_id": 42604.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42608.0,
@@ -4887,7 +4887,7 @@
     },
     {
       "conversation_id": 42609.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42610.0,
@@ -4967,7 +4967,7 @@
     },
     {
       "conversation_id": 42681.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42682.0,
@@ -5067,7 +5067,7 @@
     },
     {
       "conversation_id": 42756.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42757.0,
@@ -5095,7 +5095,7 @@
     },
     {
       "conversation_id": 42775.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42777.0,
@@ -5131,7 +5131,7 @@
     },
     {
       "conversation_id": 42802.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42805.0,
@@ -5139,11 +5139,11 @@
     },
     {
       "conversation_id": 42808.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42809.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42810.0,
@@ -5311,7 +5311,7 @@
     },
     {
       "conversation_id": 42914.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42917.0,
@@ -5387,7 +5387,7 @@
     },
     {
       "conversation_id": 42978.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 42981.0,
@@ -5459,7 +5459,7 @@
     },
     {
       "conversation_id": 48484.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48492.0,
@@ -5519,7 +5519,7 @@
     },
     {
       "conversation_id": 48531.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48540.0,
@@ -5743,7 +5743,7 @@
     },
     {
       "conversation_id": 48742.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48746.0,
@@ -5755,7 +5755,7 @@
     },
     {
       "conversation_id": 48754.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48757.0,
@@ -5819,7 +5819,7 @@
     },
     {
       "conversation_id": 48801.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48802.0,
@@ -5843,7 +5843,7 @@
     },
     {
       "conversation_id": 48810.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48816.0,
@@ -5855,11 +5855,11 @@
     },
     {
       "conversation_id": 48826.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48828.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48829.0,
@@ -5883,7 +5883,7 @@
     },
     {
       "conversation_id": 48842.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48846.0,
@@ -5963,7 +5963,7 @@
     },
     {
       "conversation_id": 48903.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48904.0,
@@ -6015,7 +6015,7 @@
     },
     {
       "conversation_id": 48930.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 48931.0,
@@ -6139,7 +6139,7 @@
     },
     {
       "conversation_id": 49016.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 49018.0,
@@ -6219,7 +6219,7 @@
     },
     {
       "conversation_id": 49079.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 49083.0,
@@ -6371,7 +6371,7 @@
     },
     {
       "conversation_id": 49166.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 49169.0,
@@ -6435,7 +6435,7 @@
     },
     {
       "conversation_id": 54667.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54671.0,
@@ -6447,11 +6447,11 @@
     },
     {
       "conversation_id": 54680.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54681.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54689.0,
@@ -6463,7 +6463,7 @@
     },
     {
       "conversation_id": 54693.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54694.0,
@@ -6495,7 +6495,7 @@
     },
     {
       "conversation_id": 54713.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54718.0,
@@ -6539,7 +6539,7 @@
     },
     {
       "conversation_id": 54757.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54759.0,
@@ -6615,7 +6615,7 @@
     },
     {
       "conversation_id": 54818.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54820.0,
@@ -6647,7 +6647,7 @@
     },
     {
       "conversation_id": 54841.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54856.0,
@@ -6695,7 +6695,7 @@
     },
     {
       "conversation_id": 54894.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54895.0,
@@ -6711,7 +6711,7 @@
     },
     {
       "conversation_id": 54907.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54908.0,
@@ -6747,7 +6747,7 @@
     },
     {
       "conversation_id": 54920.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54928.0,
@@ -6795,7 +6795,7 @@
     },
     {
       "conversation_id": 54963.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54969.0,
@@ -6807,7 +6807,7 @@
     },
     {
       "conversation_id": 54979.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 54980.0,
@@ -6951,7 +6951,7 @@
     },
     {
       "conversation_id": 55087.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 55089.0,
@@ -6983,7 +6983,7 @@
     },
     {
       "conversation_id": 55105.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 55108.0,
@@ -7119,7 +7119,7 @@
     },
     {
       "conversation_id": 55209.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 55211.0,
@@ -7191,7 +7191,7 @@
     },
     {
       "conversation_id": 55245.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 55246.0,
@@ -7255,7 +7255,7 @@
     },
     {
       "conversation_id": 55283.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 55284.0,
@@ -7327,7 +7327,7 @@
     },
     {
       "conversation_id": 60194.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60199.0,
@@ -7351,7 +7351,7 @@
     },
     {
       "conversation_id": 60220.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60221.0,
@@ -7495,7 +7495,7 @@
     },
     {
       "conversation_id": 60337.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60340.0,
@@ -7611,7 +7611,7 @@
     },
     {
       "conversation_id": 60430.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60431.0,
@@ -7731,7 +7731,7 @@
     },
     {
       "conversation_id": 60518.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60524.0,
@@ -7747,7 +7747,7 @@
     },
     {
       "conversation_id": 60528.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60529.0,
@@ -7755,7 +7755,7 @@
     },
     {
       "conversation_id": 60535.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60538.0,
@@ -7791,7 +7791,7 @@
     },
     {
       "conversation_id": 60559.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60565.0,
@@ -7839,7 +7839,7 @@
     },
     {
       "conversation_id": 60621.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60623.0,
@@ -7851,7 +7851,7 @@
     },
     {
       "conversation_id": 60628.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60636.0,
@@ -7987,7 +7987,7 @@
     },
     {
       "conversation_id": 60741.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 60746.0,
@@ -8147,7 +8147,7 @@
     },
     {
       "conversation_id": 65722.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 65725.0,
@@ -8159,7 +8159,7 @@
     },
     {
       "conversation_id": 65731.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 65734.0,
@@ -8295,7 +8295,7 @@
     },
     {
       "conversation_id": 65819.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 65820.0,
@@ -8303,7 +8303,7 @@
     },
     {
       "conversation_id": 65823.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 65829.0,
@@ -8319,7 +8319,7 @@
     },
     {
       "conversation_id": 65839.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 65840.0,
@@ -8371,7 +8371,7 @@
     },
     {
       "conversation_id": 65876.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 65882.0,
@@ -8463,7 +8463,7 @@
     },
     {
       "conversation_id": 66743.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 66744.0,
@@ -8531,7 +8531,7 @@
     },
     {
       "conversation_id": 66808.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 66809.0,
@@ -8547,7 +8547,7 @@
     },
     {
       "conversation_id": 66814.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 66815.0,
@@ -8603,7 +8603,7 @@
     },
     {
       "conversation_id": 66856.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 66858.0,
@@ -8631,7 +8631,7 @@
     },
     {
       "conversation_id": 66869.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 66878.0,
@@ -8739,7 +8739,7 @@
     },
     {
       "conversation_id": 75307.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75316.0,
@@ -8747,7 +8747,7 @@
     },
     {
       "conversation_id": 75317.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75318.0,
@@ -8787,7 +8787,7 @@
     },
     {
       "conversation_id": 75331.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75340.0,
@@ -8799,7 +8799,7 @@
     },
     {
       "conversation_id": 75355.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75357.0,
@@ -8851,7 +8851,7 @@
     },
     {
       "conversation_id": 75387.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75395.0,
@@ -8879,7 +8879,7 @@
     },
     {
       "conversation_id": 75430.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75431.0,
@@ -8903,11 +8903,11 @@
     },
     {
       "conversation_id": 75453.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75454.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75455.0,
@@ -8923,7 +8923,7 @@
     },
     {
       "conversation_id": 75464.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75472.0,
@@ -8991,7 +8991,7 @@
     },
     {
       "conversation_id": 75533.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75538.0,
@@ -8999,7 +8999,7 @@
     },
     {
       "conversation_id": 75546.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75547.0,
@@ -9103,7 +9103,7 @@
     },
     {
       "conversation_id": 75639.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75642.0,
@@ -9151,7 +9151,7 @@
     },
     {
       "conversation_id": 75668.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75676.0,
@@ -9207,11 +9207,11 @@
     },
     {
       "conversation_id": 75712.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75716.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 75719.0,
@@ -9343,7 +9343,7 @@
     },
     {
       "conversation_id": 76625.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 76628.0,
@@ -9387,7 +9387,7 @@
     },
     {
       "conversation_id": 76684.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 76690.0,
@@ -9399,7 +9399,7 @@
     },
     {
       "conversation_id": 76704.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 76705.0,
@@ -9475,7 +9475,7 @@
     },
     {
       "conversation_id": 80654.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 80659.0,
@@ -9495,7 +9495,7 @@
     },
     {
       "conversation_id": 80676.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 80679.0,
@@ -9567,11 +9567,11 @@
     },
     {
       "conversation_id": 80731.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 80734.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 80743.0,
@@ -9583,7 +9583,7 @@
     },
     {
       "conversation_id": 80747.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 80748.0,
@@ -9799,7 +9799,7 @@
     },
     {
       "conversation_id": 81469.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 81470.0,
@@ -9807,7 +9807,7 @@
     },
     {
       "conversation_id": 81478.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 81479.0,
@@ -9843,7 +9843,7 @@
     },
     {
       "conversation_id": 81516.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 81517.0,
@@ -9855,7 +9855,7 @@
     },
     {
       "conversation_id": 81524.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 81527.0,
@@ -9875,7 +9875,7 @@
     },
     {
       "conversation_id": 81547.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 81548.0,
@@ -9955,11 +9955,11 @@
     },
     {
       "conversation_id": 81600.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 81602.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 81603.0,
@@ -10055,7 +10055,7 @@
     },
     {
       "conversation_id": 81680.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 81681.0,
@@ -10083,7 +10083,7 @@
     },
     {
       "conversation_id": 81704.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 81713.0,
@@ -10211,7 +10211,7 @@
     },
     {
       "conversation_id": 85699.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 85700.0,
@@ -10263,7 +10263,7 @@
     },
     {
       "conversation_id": 85727.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 85728.0,
@@ -10287,7 +10287,7 @@
     },
     {
       "conversation_id": 85746.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 85749.0,
@@ -10299,7 +10299,7 @@
     },
     {
       "conversation_id": 85764.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 85770.0,
@@ -10395,7 +10395,7 @@
     },
     {
       "conversation_id": 85827.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 85828.0,
@@ -10491,7 +10491,7 @@
     },
     {
       "conversation_id": 85894.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 85897.0,
@@ -10663,7 +10663,7 @@
     },
     {
       "conversation_id": 85989.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 85992.0,
@@ -10691,7 +10691,7 @@
     },
     {
       "conversation_id": 86017.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 86019.0,
@@ -10735,7 +10735,7 @@
     },
     {
       "conversation_id": 86056.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 86060.0,
@@ -10755,7 +10755,7 @@
     },
     {
       "conversation_id": 86075.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 86081.0,
@@ -10795,11 +10795,11 @@
     },
     {
       "conversation_id": 86103.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 86107.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 86108.0,
@@ -10867,7 +10867,7 @@
     },
     {
       "conversation_id": 89138.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 89140.0,
@@ -11003,7 +11003,7 @@
     },
     {
       "conversation_id": 89277.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 89281.0,
@@ -11191,11 +11191,11 @@
     },
     {
       "conversation_id": 90094.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 90097.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 90098.0,
@@ -11263,7 +11263,7 @@
     },
     {
       "conversation_id": 90136.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 90144.0,
@@ -11275,7 +11275,7 @@
     },
     {
       "conversation_id": 90146.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 90148.0,
@@ -11315,7 +11315,7 @@
     },
     {
       "conversation_id": 90174.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 90175.0,
@@ -11323,7 +11323,7 @@
     },
     {
       "conversation_id": 90177.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 90179.0,
@@ -11347,7 +11347,7 @@
     },
     {
       "conversation_id": 90194.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 90198.0,
@@ -11499,7 +11499,7 @@
     },
     {
       "conversation_id": 93177.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 93183.0,
@@ -11703,7 +11703,7 @@
     },
     {
       "conversation_id": 93354.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 93360.0,
@@ -11747,7 +11747,7 @@
     },
     {
       "conversation_id": 93396.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 93398.0,
@@ -11767,7 +11767,7 @@
     },
     {
       "conversation_id": 93407.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 93409.0,
@@ -11847,7 +11847,7 @@
     },
     {
       "conversation_id": 93451.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 93452.0,
@@ -12067,7 +12067,7 @@
     },
     {
       "conversation_id": 94261.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 94264.0,
@@ -12075,7 +12075,7 @@
     },
     {
       "conversation_id": 94272.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 94273.0,
@@ -12131,11 +12131,11 @@
     },
     {
       "conversation_id": 96885.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 96887.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 96888.0,
@@ -12227,7 +12227,7 @@
     },
     {
       "conversation_id": 96951.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 96952.0,
@@ -12235,7 +12235,7 @@
     },
     {
       "conversation_id": 96957.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 96958.0,
@@ -12259,7 +12259,7 @@
     },
     {
       "conversation_id": 96970.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 96976.0,
@@ -12431,7 +12431,7 @@
     },
     {
       "conversation_id": 97102.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 97103.0,
@@ -12487,7 +12487,7 @@
     },
     {
       "conversation_id": 97160.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 97161.0,
@@ -12563,7 +12563,7 @@
     },
     {
       "conversation_id": 97209.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 97211.0,
@@ -12575,7 +12575,7 @@
     },
     {
       "conversation_id": 97225.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 97227.0,
@@ -12623,7 +12623,7 @@
     },
     {
       "conversation_id": 97252.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 97253.0,
@@ -12631,7 +12631,7 @@
     },
     {
       "conversation_id": 97254.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 97255.0,
@@ -12651,7 +12651,7 @@
     },
     {
       "conversation_id": 97262.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 97263.0,
@@ -12695,7 +12695,7 @@
     },
     {
       "conversation_id": 97286.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 97288.0,
@@ -12743,7 +12743,7 @@
     },
     {
       "conversation_id": 97316.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 97317.0,
@@ -12759,7 +12759,7 @@
     },
     {
       "conversation_id": 97324.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 97327.0,
@@ -12815,7 +12815,7 @@
     },
     {
       "conversation_id": 100307.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 100315.0,
@@ -12855,7 +12855,7 @@
     },
     {
       "conversation_id": 100336.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 100337.0,
@@ -12875,7 +12875,7 @@
     },
     {
       "conversation_id": 100347.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 100349.0,
@@ -13095,7 +13095,7 @@
     },
     {
       "conversation_id": 100470.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 100474.0,
@@ -13123,7 +13123,7 @@
     },
     {
       "conversation_id": 100493.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 100496.0,
@@ -13215,7 +13215,7 @@
     },
     {
       "conversation_id": 100545.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 100546.0,
@@ -13223,7 +13223,7 @@
     },
     {
       "conversation_id": 100549.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 100553.0,
@@ -13259,7 +13259,7 @@
     },
     {
       "conversation_id": 100569.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 100571.0,
@@ -13287,7 +13287,7 @@
     },
     {
       "conversation_id": 100597.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 100602.0,
@@ -13331,7 +13331,7 @@
     },
     {
       "conversation_id": 100642.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 100643.0,
@@ -13419,7 +13419,7 @@
     },
     {
       "conversation_id": 103347.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 103352.0,
@@ -13499,7 +13499,7 @@
     },
     {
       "conversation_id": 103397.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 103404.0,
@@ -13703,7 +13703,7 @@
     },
     {
       "conversation_id": 103576.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 103578.0,
@@ -13955,11 +13955,11 @@
     },
     {
       "conversation_id": 105929.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 105930.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 105932.0,
@@ -14015,7 +14015,7 @@
     },
     {
       "conversation_id": 105985.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 105986.0,
@@ -14027,7 +14027,7 @@
     },
     {
       "conversation_id": 105991.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 105992.0,
@@ -14055,7 +14055,7 @@
     },
     {
       "conversation_id": 106004.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 106008.0,
@@ -14067,7 +14067,7 @@
     },
     {
       "conversation_id": 106011.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 106015.0,
@@ -14159,7 +14159,7 @@
     },
     {
       "conversation_id": 106076.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 106078.0,
@@ -14171,7 +14171,7 @@
     },
     {
       "conversation_id": 106082.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 106085.0,
@@ -14339,7 +14339,7 @@
     },
     {
       "conversation_id": 106200.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 106202.0,
@@ -14483,7 +14483,7 @@
     },
     {
       "conversation_id": 106298.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 106311.0,
@@ -14511,7 +14511,7 @@
     },
     {
       "conversation_id": 108354.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 108360.0,
@@ -14551,7 +14551,7 @@
     },
     {
       "conversation_id": 108385.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 108386.0,
@@ -14731,7 +14731,7 @@
     },
     {
       "conversation_id": 108536.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 108538.0,
@@ -14743,7 +14743,7 @@
     },
     {
       "conversation_id": 108542.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 108544.0,
@@ -14775,7 +14775,7 @@
     },
     {
       "conversation_id": 108555.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 108565.0,
@@ -14811,7 +14811,7 @@
     },
     {
       "conversation_id": 108596.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 108600.0,
@@ -14851,11 +14851,11 @@
     },
     {
       "conversation_id": 108628.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 108629.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 108630.0,
@@ -14967,7 +14967,7 @@
     },
     {
       "conversation_id": 108696.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 110579.0,
@@ -15155,7 +15155,7 @@
     },
     {
       "conversation_id": 110724.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 110725.0,
@@ -15183,7 +15183,7 @@
     },
     {
       "conversation_id": 110754.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 110760.0,
@@ -15527,7 +15527,7 @@
     },
     {
       "conversation_id": 120222.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 120224.0,
@@ -15555,7 +15555,7 @@
     },
     {
       "conversation_id": 120249.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 120948.0,
@@ -15579,7 +15579,7 @@
     },
     {
       "conversation_id": 120962.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 120964.0,
@@ -15711,7 +15711,7 @@
     },
     {
       "conversation_id": 121093.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121094.0,
@@ -15795,7 +15795,7 @@
     },
     {
       "conversation_id": 121161.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121164.0,
@@ -15811,7 +15811,7 @@
     },
     {
       "conversation_id": 121168.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121171.0,
@@ -15859,7 +15859,7 @@
     },
     {
       "conversation_id": 121198.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121201.0,
@@ -15879,7 +15879,7 @@
     },
     {
       "conversation_id": 121209.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121215.0,
@@ -15935,7 +15935,7 @@
     },
     {
       "conversation_id": 121241.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121243.0,
@@ -16019,7 +16019,7 @@
     },
     {
       "conversation_id": 121292.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121294.0,
@@ -16171,7 +16171,7 @@
     },
     {
       "conversation_id": 121405.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121406.0,
@@ -16211,7 +16211,7 @@
     },
     {
       "conversation_id": 121438.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121440.0,
@@ -16251,7 +16251,7 @@
     },
     {
       "conversation_id": 121463.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121464.0,
@@ -16287,7 +16287,7 @@
     },
     {
       "conversation_id": 121502.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121505.0,
@@ -16327,7 +16327,7 @@
     },
     {
       "conversation_id": 121517.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121520.0,
@@ -16335,7 +16335,7 @@
     },
     {
       "conversation_id": 121522.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121525.0,
@@ -16375,7 +16375,7 @@
     },
     {
       "conversation_id": 121542.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121545.0,
@@ -16407,7 +16407,7 @@
     },
     {
       "conversation_id": 121566.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121570.0,
@@ -16435,7 +16435,7 @@
     },
     {
       "conversation_id": 121592.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121603.0,
@@ -16475,7 +16475,7 @@
     },
     {
       "conversation_id": 121622.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121624.0,
@@ -16579,7 +16579,7 @@
     },
     {
       "conversation_id": 121689.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 121690.0,
@@ -16615,7 +16615,7 @@
     },
     {
       "conversation_id": 121718.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 122638.0,
@@ -16635,7 +16635,7 @@
     },
     {
       "conversation_id": 122646.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 122650.0,
@@ -16815,7 +16815,7 @@
     },
     {
       "conversation_id": 122807.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 122809.0,
@@ -16823,7 +16823,7 @@
     },
     {
       "conversation_id": 122815.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 122823.0,
@@ -16859,11 +16859,11 @@
     },
     {
       "conversation_id": 122842.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 122845.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 122846.0,
@@ -17071,7 +17071,7 @@
     },
     {
       "conversation_id": 124539.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 124541.0,
@@ -17191,7 +17191,7 @@
     },
     {
       "conversation_id": 124627.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 124631.0,
@@ -17267,7 +17267,7 @@
     },
     {
       "conversation_id": 124663.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 124664.0,
@@ -17323,11 +17323,11 @@
     },
     {
       "conversation_id": 124707.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 124711.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 124713.0,
@@ -17351,7 +17351,7 @@
     },
     {
       "conversation_id": 124722.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 124727.0,
@@ -17379,7 +17379,7 @@
     },
     {
       "conversation_id": 124737.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 124739.0,
@@ -17391,7 +17391,7 @@
     },
     {
       "conversation_id": 124741.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 124744.0,
@@ -17411,7 +17411,7 @@
     },
     {
       "conversation_id": 124750.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 124751.0,
@@ -17527,7 +17527,7 @@
     },
     {
       "conversation_id": 126107.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 126121.0,
@@ -17627,7 +17627,7 @@
     },
     {
       "conversation_id": 126176.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 126179.0,
@@ -17723,7 +17723,7 @@
     },
     {
       "conversation_id": 126235.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 126243.0,
@@ -17743,7 +17743,7 @@
     },
     {
       "conversation_id": 126258.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 126259.0,
@@ -17799,7 +17799,7 @@
     },
     {
       "conversation_id": 126290.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 126291.0,
@@ -17815,7 +17815,7 @@
     },
     {
       "conversation_id": 126304.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 126309.0,
@@ -17955,7 +17955,7 @@
     },
     {
       "conversation_id": 127599.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 127600.0,
@@ -18115,7 +18115,7 @@
     },
     {
       "conversation_id": 127705.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 127706.0,
@@ -18143,7 +18143,7 @@
     },
     {
       "conversation_id": 127721.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 127725.0,
@@ -18159,7 +18159,7 @@
     },
     {
       "conversation_id": 127728.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 127729.0,
@@ -18227,7 +18227,7 @@
     },
     {
       "conversation_id": 127774.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 127777.0,
@@ -18319,7 +18319,7 @@
     },
     {
       "conversation_id": 129071.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 129076.0,
@@ -18483,7 +18483,7 @@
     },
     {
       "conversation_id": 129187.0,
-      "cluster": 0
+      "cluster": 1
     },
     {
       "conversation_id": 129191.0,
@@ -18499,7 +18499,7 @@
     },
     {
       "conversation_id": 129198.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 129203.0,
@@ -18511,7 +18511,7 @@
     },
     {
       "conversation_id": 129205.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 130208.0,
@@ -18555,7 +18555,7 @@
     },
     {
       "conversation_id": 130236.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 130237.0,
@@ -18599,7 +18599,7 @@
     },
     {
       "conversation_id": 130268.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 130269.0,
@@ -18611,7 +18611,7 @@
     },
     {
       "conversation_id": 130289.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 130298.0,
@@ -18639,7 +18639,7 @@
     },
     {
       "conversation_id": 130318.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 130319.0,
@@ -18683,7 +18683,7 @@
     },
     {
       "conversation_id": 130346.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 130349.0,
@@ -18819,7 +18819,7 @@
     },
     {
       "conversation_id": 131429.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 131430.0,
@@ -18859,11 +18859,11 @@
     },
     {
       "conversation_id": 131451.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 131463.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 131464.0,
@@ -18955,11 +18955,11 @@
     },
     {
       "conversation_id": 131539.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 131541.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 131542.0,
@@ -18999,7 +18999,7 @@
     },
     {
       "conversation_id": 131580.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 131581.0,
@@ -19031,11 +19031,11 @@
     },
     {
       "conversation_id": 131602.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 131603.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 131605.0,
@@ -19091,7 +19091,7 @@
     },
     {
       "conversation_id": 132612.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 132614.0,
@@ -19183,7 +19183,7 @@
     },
     {
       "conversation_id": 132670.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 133565.0,
@@ -19199,7 +19199,7 @@
     },
     {
       "conversation_id": 133574.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 133580.0,
@@ -19311,7 +19311,7 @@
     },
     {
       "conversation_id": 133648.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 133654.0,
@@ -19355,11 +19355,11 @@
     },
     {
       "conversation_id": 134475.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 134477.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 134478.0,
@@ -19591,7 +19591,7 @@
     },
     {
       "conversation_id": 135407.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 135409.0,
@@ -19679,7 +19679,7 @@
     },
     {
       "conversation_id": 135476.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 135478.0,
@@ -19747,7 +19747,7 @@
     },
     {
       "conversation_id": 143111.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143116.0,
@@ -19755,7 +19755,7 @@
     },
     {
       "conversation_id": 143117.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143118.0,
@@ -19775,7 +19775,7 @@
     },
     {
       "conversation_id": 143129.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143134.0,
@@ -19791,15 +19791,15 @@
     },
     {
       "conversation_id": 143139.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143146.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143147.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143153.0,
@@ -19887,11 +19887,11 @@
     },
     {
       "conversation_id": 143233.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143236.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143238.0,
@@ -19951,7 +19951,7 @@
     },
     {
       "conversation_id": 143277.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143279.0,
@@ -20075,7 +20075,7 @@
     },
     {
       "conversation_id": 143364.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143366.0,
@@ -20091,7 +20091,7 @@
     },
     {
       "conversation_id": 143373.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143374.0,
@@ -20163,7 +20163,7 @@
     },
     {
       "conversation_id": 143419.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143424.0,
@@ -20279,11 +20279,11 @@
     },
     {
       "conversation_id": 143550.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143552.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143555.0,
@@ -20331,7 +20331,7 @@
     },
     {
       "conversation_id": 143591.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143595.0,
@@ -20343,7 +20343,7 @@
     },
     {
       "conversation_id": 143599.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143600.0,
@@ -20431,7 +20431,7 @@
     },
     {
       "conversation_id": 143672.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143675.0,
@@ -20527,7 +20527,7 @@
     },
     {
       "conversation_id": 143741.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143744.0,
@@ -20543,7 +20543,7 @@
     },
     {
       "conversation_id": 143750.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143751.0,
@@ -20555,7 +20555,7 @@
     },
     {
       "conversation_id": 143758.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143764.0,
@@ -20607,7 +20607,7 @@
     },
     {
       "conversation_id": 143808.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143813.0,
@@ -20851,11 +20851,11 @@
     },
     {
       "conversation_id": 143944.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143945.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143946.0,
@@ -20871,7 +20871,7 @@
     },
     {
       "conversation_id": 143952.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143955.0,
@@ -20919,7 +20919,7 @@
     },
     {
       "conversation_id": 143987.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 143990.0,
@@ -21043,7 +21043,7 @@
     },
     {
       "conversation_id": 145603.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 145604.0,
@@ -21103,7 +21103,7 @@
     },
     {
       "conversation_id": 146249.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 146251.0,
@@ -21111,7 +21111,7 @@
     },
     {
       "conversation_id": 146261.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 146262.0,
@@ -21127,7 +21127,7 @@
     },
     {
       "conversation_id": 146274.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 146275.0,
@@ -21155,7 +21155,7 @@
     },
     {
       "conversation_id": 146294.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 146295.0,
@@ -21247,7 +21247,7 @@
     },
     {
       "conversation_id": 146834.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 146835.0,
@@ -21267,7 +21267,7 @@
     },
     {
       "conversation_id": 146842.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 146843.0,
@@ -21275,7 +21275,7 @@
     },
     {
       "conversation_id": 146844.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 146847.0,
@@ -21283,7 +21283,7 @@
     },
     {
       "conversation_id": 146852.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 146853.0,
@@ -21323,7 +21323,7 @@
     },
     {
       "conversation_id": 146880.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 146883.0,
@@ -21383,7 +21383,7 @@
     },
     {
       "conversation_id": 146916.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 146921.0,
@@ -21463,7 +21463,7 @@
     },
     {
       "conversation_id": 147477.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 147492.0,
@@ -21471,7 +21471,7 @@
     },
     {
       "conversation_id": 147917.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 147921.0,
@@ -21491,7 +21491,7 @@
     },
     {
       "conversation_id": 147928.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 147931.0,
@@ -21515,7 +21515,7 @@
     },
     {
       "conversation_id": 147947.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 147948.0,
@@ -21535,7 +21535,7 @@
     },
     {
       "conversation_id": 147962.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 147964.0,
@@ -21555,7 +21555,7 @@
     },
     {
       "conversation_id": 147973.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 147975.0,
@@ -21619,7 +21619,7 @@
     },
     {
       "conversation_id": 148396.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 148398.0,
@@ -21839,7 +21839,7 @@
     },
     {
       "conversation_id": 157770.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 157774.0,
@@ -21951,11 +21951,11 @@
     },
     {
       "conversation_id": 158570.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 158573.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 158574.0,
@@ -22115,7 +22115,7 @@
     },
     {
       "conversation_id": 158682.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 158683.0,
@@ -22167,7 +22167,7 @@
     },
     {
       "conversation_id": 158710.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 158711.0,
@@ -22179,7 +22179,7 @@
     },
     {
       "conversation_id": 158716.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 158720.0,
@@ -22411,7 +22411,7 @@
     },
     {
       "conversation_id": 158908.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 158910.0,
@@ -22471,7 +22471,7 @@
     },
     {
       "conversation_id": 158941.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 158942.0,
@@ -22487,7 +22487,7 @@
     },
     {
       "conversation_id": 158948.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 158949.0,
@@ -22635,7 +22635,7 @@
     },
     {
       "conversation_id": 159066.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 159069.0,
@@ -22763,7 +22763,7 @@
     },
     {
       "conversation_id": 159175.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 159176.0,
@@ -22811,7 +22811,7 @@
     },
     {
       "conversation_id": 159206.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 159207.0,
@@ -22863,7 +22863,7 @@
     },
     {
       "conversation_id": 166690.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 166691.0,
@@ -22939,11 +22939,11 @@
     },
     {
       "conversation_id": 166764.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 166768.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 166773.0,
@@ -22987,7 +22987,7 @@
     },
     {
       "conversation_id": 166807.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 166813.0,
@@ -23027,7 +23027,7 @@
     },
     {
       "conversation_id": 166843.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 166845.0,
@@ -23051,7 +23051,7 @@
     },
     {
       "conversation_id": 166861.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 166863.0,
@@ -23183,7 +23183,7 @@
     },
     {
       "conversation_id": 166954.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 166959.0,
@@ -23207,7 +23207,7 @@
     },
     {
       "conversation_id": 166970.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 166972.0,
@@ -23215,7 +23215,7 @@
     },
     {
       "conversation_id": 166981.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 166982.0,
@@ -23247,7 +23247,7 @@
     },
     {
       "conversation_id": 167001.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167002.0,
@@ -23267,7 +23267,7 @@
     },
     {
       "conversation_id": 167007.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167009.0,
@@ -23303,7 +23303,7 @@
     },
     {
       "conversation_id": 167032.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167038.0,
@@ -23327,7 +23327,7 @@
     },
     {
       "conversation_id": 167051.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167056.0,
@@ -23347,7 +23347,7 @@
     },
     {
       "conversation_id": 167071.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167078.0,
@@ -23363,7 +23363,7 @@
     },
     {
       "conversation_id": 167083.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167089.0,
@@ -23371,7 +23371,7 @@
     },
     {
       "conversation_id": 167091.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167093.0,
@@ -23419,7 +23419,7 @@
     },
     {
       "conversation_id": 167123.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167124.0,
@@ -23579,7 +23579,7 @@
     },
     {
       "conversation_id": 167249.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167253.0,
@@ -23603,7 +23603,7 @@
     },
     {
       "conversation_id": 167269.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167270.0,
@@ -23663,7 +23663,7 @@
     },
     {
       "conversation_id": 167328.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167331.0,
@@ -23711,7 +23711,7 @@
     },
     {
       "conversation_id": 167351.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167352.0,
@@ -23839,7 +23839,7 @@
     },
     {
       "conversation_id": 167436.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167437.0,
@@ -23847,7 +23847,7 @@
     },
     {
       "conversation_id": 167444.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 167446.0,
@@ -23919,11 +23919,11 @@
     },
     {
       "conversation_id": 167486.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175405.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175406.0,
@@ -23975,7 +23975,7 @@
     },
     {
       "conversation_id": 175458.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175459.0,
@@ -23991,7 +23991,7 @@
     },
     {
       "conversation_id": 175463.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175470.0,
@@ -24195,7 +24195,7 @@
     },
     {
       "conversation_id": 175650.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175651.0,
@@ -24211,7 +24211,7 @@
     },
     {
       "conversation_id": 175666.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175667.0,
@@ -24223,7 +24223,7 @@
     },
     {
       "conversation_id": 175681.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175684.0,
@@ -24287,7 +24287,7 @@
     },
     {
       "conversation_id": 175722.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175725.0,
@@ -24335,7 +24335,7 @@
     },
     {
       "conversation_id": 175772.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175774.0,
@@ -24347,7 +24347,7 @@
     },
     {
       "conversation_id": 175779.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175784.0,
@@ -24363,7 +24363,7 @@
     },
     {
       "conversation_id": 175790.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175793.0,
@@ -24479,7 +24479,7 @@
     },
     {
       "conversation_id": 175859.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175865.0,
@@ -24547,7 +24547,7 @@
     },
     {
       "conversation_id": 175913.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175914.0,
@@ -24583,7 +24583,7 @@
     },
     {
       "conversation_id": 175945.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175955.0,
@@ -24607,7 +24607,7 @@
     },
     {
       "conversation_id": 175960.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175963.0,
@@ -24615,11 +24615,11 @@
     },
     {
       "conversation_id": 175965.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175966.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 175968.0,
@@ -24823,7 +24823,7 @@
     },
     {
       "conversation_id": 176121.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 176125.0,
@@ -24883,7 +24883,7 @@
     },
     {
       "conversation_id": 176174.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 176176.0,
@@ -24919,7 +24919,7 @@
     },
     {
       "conversation_id": 176204.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 176209.0,
@@ -24959,7 +24959,7 @@
     },
     {
       "conversation_id": 184016.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184021.0,
@@ -25115,11 +25115,11 @@
     },
     {
       "conversation_id": 184144.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184147.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184152.0,
@@ -25179,11 +25179,11 @@
     },
     {
       "conversation_id": 184211.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184213.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184219.0,
@@ -25215,7 +25215,7 @@
     },
     {
       "conversation_id": 184240.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184246.0,
@@ -25227,7 +25227,7 @@
     },
     {
       "conversation_id": 184248.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184249.0,
@@ -25307,11 +25307,11 @@
     },
     {
       "conversation_id": 184307.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184311.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184312.0,
@@ -25343,7 +25343,7 @@
     },
     {
       "conversation_id": 184332.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184334.0,
@@ -25431,7 +25431,7 @@
     },
     {
       "conversation_id": 184415.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184418.0,
@@ -25471,7 +25471,7 @@
     },
     {
       "conversation_id": 184442.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184443.0,
@@ -25515,7 +25515,7 @@
     },
     {
       "conversation_id": 184459.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184460.0,
@@ -25523,7 +25523,7 @@
     },
     {
       "conversation_id": 184465.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184469.0,
@@ -25539,7 +25539,7 @@
     },
     {
       "conversation_id": 184478.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184480.0,
@@ -25587,7 +25587,7 @@
     },
     {
       "conversation_id": 184512.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184519.0,
@@ -25619,7 +25619,7 @@
     },
     {
       "conversation_id": 184540.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184541.0,
@@ -25679,7 +25679,7 @@
     },
     {
       "conversation_id": 184582.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184586.0,
@@ -25759,7 +25759,7 @@
     },
     {
       "conversation_id": 184630.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184631.0,
@@ -25915,7 +25915,7 @@
     },
     {
       "conversation_id": 184737.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184742.0,
@@ -25955,7 +25955,7 @@
     },
     {
       "conversation_id": 184762.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184777.0,
@@ -25963,7 +25963,7 @@
     },
     {
       "conversation_id": 184778.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 184782.0,
@@ -26067,7 +26067,7 @@
     },
     {
       "conversation_id": 192798.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 192800.0,
@@ -26143,7 +26143,7 @@
     },
     {
       "conversation_id": 192874.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 192881.0,
@@ -26255,7 +26255,7 @@
     },
     {
       "conversation_id": 192964.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 192967.0,
@@ -26299,11 +26299,11 @@
     },
     {
       "conversation_id": 192986.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 192987.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 192990.0,
@@ -26311,7 +26311,7 @@
     },
     {
       "conversation_id": 192991.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 192994.0,
@@ -26335,7 +26335,7 @@
     },
     {
       "conversation_id": 193013.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 193014.0,
@@ -26455,7 +26455,7 @@
     },
     {
       "conversation_id": 193128.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 193133.0,
@@ -26655,7 +26655,7 @@
     },
     {
       "conversation_id": 193281.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 193282.0,
@@ -26847,11 +26847,11 @@
     },
     {
       "conversation_id": 193400.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 193401.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 193405.0,
@@ -26863,7 +26863,7 @@
     },
     {
       "conversation_id": 193408.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 193411.0,
@@ -26955,7 +26955,7 @@
     },
     {
       "conversation_id": 193491.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 193492.0,
@@ -27091,7 +27091,7 @@
     },
     {
       "conversation_id": 193581.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 193585.0,
@@ -27147,7 +27147,7 @@
     },
     {
       "conversation_id": 200500.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200501.0,
@@ -27179,7 +27179,7 @@
     },
     {
       "conversation_id": 200533.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200540.0,
@@ -27191,7 +27191,7 @@
     },
     {
       "conversation_id": 200545.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200548.0,
@@ -27215,7 +27215,7 @@
     },
     {
       "conversation_id": 200563.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200567.0,
@@ -27243,7 +27243,7 @@
     },
     {
       "conversation_id": 200601.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200614.0,
@@ -27251,7 +27251,7 @@
     },
     {
       "conversation_id": 200619.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200623.0,
@@ -27319,7 +27319,7 @@
     },
     {
       "conversation_id": 200684.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200685.0,
@@ -27383,7 +27383,7 @@
     },
     {
       "conversation_id": 200729.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200737.0,
@@ -27415,7 +27415,7 @@
     },
     {
       "conversation_id": 200759.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200761.0,
@@ -27431,7 +27431,7 @@
     },
     {
       "conversation_id": 200768.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200769.0,
@@ -27459,7 +27459,7 @@
     },
     {
       "conversation_id": 200784.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200785.0,
@@ -27559,7 +27559,7 @@
     },
     {
       "conversation_id": 200853.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200857.0,
@@ -27635,7 +27635,7 @@
     },
     {
       "conversation_id": 200918.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200927.0,
@@ -27683,7 +27683,7 @@
     },
     {
       "conversation_id": 200958.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 200959.0,
@@ -27759,7 +27759,7 @@
     },
     {
       "conversation_id": 201003.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 201005.0,
@@ -27795,7 +27795,7 @@
     },
     {
       "conversation_id": 201046.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 201050.0,
@@ -27847,7 +27847,7 @@
     },
     {
       "conversation_id": 201086.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 201087.0,
@@ -27875,7 +27875,7 @@
     },
     {
       "conversation_id": 201111.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 201114.0,
@@ -28031,7 +28031,7 @@
     },
     {
       "conversation_id": 201205.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 201206.0,
@@ -28067,7 +28067,7 @@
     },
     {
       "conversation_id": 201227.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 201238.0,
@@ -28095,11 +28095,11 @@
     },
     {
       "conversation_id": 201257.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 201259.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 201261.0,
@@ -28131,7 +28131,7 @@
     },
     {
       "conversation_id": 201272.0,
-      "cluster": 1
+      "cluster": 0
     },
     {
       "conversation_id": 201278.0,
