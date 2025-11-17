@@ -413,19 +413,7 @@ Allows for cluster-level and individual-level effects.
 **Data**:
 - [`data/processed/2023_conversations_two-participants_role_features.parquet`](../data/processed/2023_conversations_two-participants_role_features.parquet) - 15D feature matrix
 
-## Citation
-
-If you use this role decomposition approach, please cite:
-
-```
-[Your Paper/Repository]
-Finding: Student temporal patterns drive clustering in tutoring conversations (η² = 0.608),
-while tutor patterns show negligible effect (η² < 0.01), demonstrating asymmetric
-temporal dynamics in expert-novice interactions.
-```
-
 ---
 
-**Last Updated**: November 2024
+**Last Updated**: November 2025
 **Author**: Mike Ion
-**Contact**: [Your contact info]
