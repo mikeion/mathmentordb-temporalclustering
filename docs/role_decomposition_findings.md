@@ -147,13 +147,13 @@ The following figures demonstrate the role decomposition findings. All figures a
 - Cluster Density: 0.0 (conversations too short for 5-min windows)*
 - Students maintain remarkably consistent message timing
 
-*Cluster Density appears as 0.0 for all conversations. Here's why this metric failed:
+*Note on Cluster Density implementation:
 
-Cluster Density measures temporal "clumpiness" by sliding a 5-minute window across timestamps and computing Variance(counts) / Mean(counts). For role-specific features, it looks only at one participant's messages.
+**Updated implementation** (as of latest version): Cluster Density now uses an **adaptive window** (20% of participant's message span, bounded between 60-300 seconds). This ensures the metric works for role-specific features where one participant's messages may span a short duration even in long conversations.
 
-**The problem**: Even in a 14-minute conversation, a student might only send messages spanning 2-3 minutes of that time (e.g., ask a question at minute 1, follow-up at minute 3). When we filter to student-only timestamps, the span is often <5 minutes, so the window can't slide.
+**Previous issue**: The original 5-minute fixed window failed for role-specific analysis because filtering to student-only timestamps often resulted in spans <5 minutes, making the sliding window unable to compute meaningful variance.
 
-**Better alternative**: Use a 1-2 minute window, or make the window adaptive (e.g., 20% of conversation duration). This is a limitation of the current implementation - the feature could work but needs a smaller window size for role-specific analysis.
+**Current behavior**: With adaptive windows, cluster density can now capture temporal clumpiness at appropriate scales for each participant. However, it may still show low variance if participants maintain very steady message spacing (which itself is informative!).
 
 **The critical insight - look at the color patterns**:
 1. **Top 5 rows (Conversation)**: Some green/red differences, but moderate

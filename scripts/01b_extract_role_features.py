@@ -54,28 +54,45 @@ def calculate_burst_coefficient(timestamps):
     return float((sigma - mu) / (sigma + mu))
 
 
-def calculate_cluster_density(timestamps, window_minutes=5):
-    """CD = Var(counts) / Mean(counts) in sliding windows"""
-    if len(timestamps) < 2:
+def calculate_cluster_density(timestamps, window_minutes=None):
+    """
+    CD = Var(counts) / Mean(counts) in sliding windows
+
+    Uses adaptive window: 20% of message span, bounded [60s, 300s]
+    This ensures the metric works for role-specific features where
+    participant message spans may be short even in long conversations.
+    """
+    if len(timestamps) < 3:  # Need at least 3 messages
         return 0.0
 
-    window_size = window_minutes * 60
     start_time = timestamps.min()
     end_time = timestamps.max()
     duration = end_time - start_time
 
-    if duration < window_size:
+    if duration < 1:  # Less than 1 second span
+        return 0.0
+
+    # Adaptive window: 20% of duration, bounded [60s, 300s]
+    if window_minutes is None:
+        window_size = duration * 0.2
+        window_size = max(60, min(300, window_size))
+    else:
+        window_size = window_minutes * 60
+
+    # Need room for at least 2 windows with overlap
+    if duration < window_size * 1.5:
         return 0.0
 
     # Sliding window counts
     window_counts = []
     current_time = start_time
+    step_size = window_size / 2  # 50% overlap
 
     while current_time <= end_time - window_size:
         count = np.sum((timestamps >= current_time) &
                       (timestamps < current_time + window_size))
         window_counts.append(count)
-        current_time += window_size / 2  # 50% overlap
+        current_time += step_size
 
     if len(window_counts) < 2:
         return 0.0

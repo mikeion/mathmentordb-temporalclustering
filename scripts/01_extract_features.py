@@ -52,17 +52,31 @@ def calculate_burst_coefficient(timestamps):
     return float((sigma - mu) / (sigma + mu))
 
 
-def calculate_cluster_density(timestamps, window_minutes=5):
+def calculate_cluster_density(timestamps, window_minutes=None):
     """
     CD = Var(window_counts) / Mean(window_counts)
 
-    Uses 5-minute sliding windows to measure "clumpiness"
+    Uses adaptive window: 20% of message span, bounded [60s, 300s]
+    This ensures the metric works for conversations of varying lengths.
 
     Returns:
         Higher = more concentrated bursts (downpour)
         Lower = evenly distributed (drizzle)
     """
-    window_size = window_minutes * 60  # seconds
+    if len(timestamps) < 3:
+        return 0.0
+
+    # Calculate span
+    span = timestamps[-1] - timestamps[0]
+    if span < 1:
+        return 0.0
+
+    # Adaptive window: 20% of span, bounded [60s, 300s]
+    if window_minutes is None:
+        window_size = span * 0.2
+        window_size = max(60, min(300, window_size))
+    else:
+        window_size = window_minutes * 60
 
     window_counts = []
     for i, t in enumerate(timestamps):
