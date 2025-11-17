@@ -147,13 +147,13 @@ The following figures demonstrate the role decomposition findings. All figures a
 - Cluster Density: 0.0 (conversations too short for 5-min windows)*
 - Students maintain remarkably consistent message timing
 
-*Cluster Density appears as 0.0 for all conversations because it requires conversations longer than 5 minutes. Here's why:
+*Cluster Density appears as 0.0 for all conversations. Here's why this metric failed:
 
-Cluster Density measures temporal "clumpiness" by sliding a 5-minute window across the conversation and counting messages in each window. It then computes Variance(counts) / Mean(counts) across windows. This requires:
-- Multiple windows to compare (conversation > 5 minutes)
-- Enough messages in each window to have meaningful variance
+Cluster Density measures temporal "clumpiness" by sliding a 5-minute window across timestamps and computing Variance(counts) / Mean(counts). For role-specific features, it looks only at one participant's messages.
 
-Most tutoring conversations in this dataset are brief (under 5 minutes), so the sliding window approach returns 0.0. This feature doesn't contribute to clustering in this dataset, which is why it's excluded from the effect size calculations (NaN).
+**The problem**: Even in a 14-minute conversation, a student might only send messages spanning 2-3 minutes of that time (e.g., ask a question at minute 1, follow-up at minute 3). When we filter to student-only timestamps, the span is often <5 minutes, so the window can't slide.
+
+**Better alternative**: Use a 1-2 minute window, or make the window adaptive (e.g., 20% of conversation duration). This is a limitation of the current implementation - the feature could work but needs a smaller window size for role-specific analysis.
 
 **The critical insight - look at the color patterns**:
 1. **Top 5 rows (Conversation)**: Some green/red differences, but moderate
