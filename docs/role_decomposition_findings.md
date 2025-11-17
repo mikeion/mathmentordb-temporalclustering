@@ -370,6 +370,84 @@ Our [power user data](power_user_analysis.md) shows high-volume tutors (100+ con
 - Identifies which role drives the pattern
 - Actionable insights (e.g., "focus on student behavior, not tutor")
 
+## Lessons Learned: Why Cluster Density Failed
+
+One of the most important discoveries from this analysis was understanding **why cluster density doesn't work** for role-specific features in tutoring data - and what this teaches us about feature engineering for asymmetric interactions.
+
+### The Initial Expectation
+
+Cluster density measures temporal "clumpiness" using sliding windows to count messages in different time periods. We expected it to work because:
+- Many conversations last 10-15 minutes (plenty of time for sliding windows)
+- The conversation-level cluster density showed some signal
+- The metric works well in other domains (chat logs, customer support)
+
+### What We Found
+
+**99.6% of conversations returned cluster_density_student = 0**
+
+Even in conversations lasting 15+ minutes, student cluster density was zero. This was surprising and initially seemed like a bug.
+
+### The Investigation
+
+We tried multiple fixes:
+1. **Original approach**: Fixed 5-minute sliding windows
+   - Result: 100% zeros for student features
+2. **First adaptation**: 20% of conversation span, minimum 60 seconds
+   - Result: 99.99% zeros
+3. **Second adaptation**: 30% of conversation span, minimum 10 seconds
+   - Result: 99.6% zeros (27 out of 6,964 conversations had non-zero values)
+
+### The Key Insight
+
+**Conversation duration ≠ participant message span**
+
+Even in a 15-minute conversation:
+- **Conversation span**: 15 minutes (first message to last message)
+- **Student message span**: Often only 45-90 seconds (time from student's first to last message)
+- **Why**: Students send 3-8 messages total, clustered in brief exchanges with long gaps for tutor responses
+
+**Example scenario**:
+```
+00:00 - Student: "How do I solve this integral?"
+00:30 - Tutor: [explains for 3 minutes]
+04:00 - Student: "Got it, but what about this part?"
+04:15 - Tutor: [more explanation]
+08:00 - Student: "Ah, I see now!"
+```
+
+- Conversation duration: 8 minutes
+- Student message span: 45 seconds (00:00 to 08:00 with only 3 messages)
+- Student cluster density: 0 (can't compute meaningful sliding windows on 45 seconds with 3 messages)
+
+### The Lesson
+
+**Role-specific features require role-specific data characteristics**
+
+When decomposing features by role, we must consider whether each participant has sufficient data for that metric:
+
+| Metric | Requires | Works for Students? | Works for Tutors? |
+|--------|----------|-------------------|-------------------|
+| Burst Coefficient | 3+ messages | ✓ Yes | ✓ Yes |
+| Timing Consistency | 3+ messages | ✓ Yes | ✓ Yes |
+| Response Acceleration | 3+ messages | ✓ Yes | ✓ Yes |
+| Memory Coefficient | 4+ messages | ✓ Usually | ✓ Yes |
+| Cluster Density | Dense sustained messaging | ✗ No (99.6% fail) | ✓ Yes |
+
+**Why tutors work but students don't**:
+- Tutors send 10-30 messages spanning most of the conversation duration
+- Students send 3-8 messages in brief bursts, leaving most of the conversation time empty
+- Sliding windows need continuous message flow, not sparse punctuation
+
+### Design Recommendation
+
+When applying temporal features to role-specific data:
+1. **Check data characteristics first**: Don't assume conversation-level feasibility implies role-level feasibility
+2. **Feature-by-feature validation**: Each feature has different requirements; test each separately
+3. **Accept null features**: It's okay to have features that don't work for all roles - this is information
+4. **Document the failure**: Knowing what doesn't work is as valuable as knowing what does
+
+In our case, cluster density's failure for students actually supports our main finding: students engage in sparse bursts while tutors maintain sustained presence.
+
 ## Next Steps
 
 ### 1. Characterize "Methodical Worker" Students (7%)
