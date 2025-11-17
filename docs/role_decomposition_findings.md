@@ -11,6 +11,8 @@ When we decompose conversation-level temporal features (5D) into role-specific f
 
 ## The Analysis
 
+**Note**: For mathematical details on how each temporal feature is computed and interpreted, see [Temporal Feature Mathematics](temporal_feature_mathematics.md).
+
 ### What We Did
 
 We compared two clustering approaches on 6,964 two-participant tutoring conversations from 2023:
