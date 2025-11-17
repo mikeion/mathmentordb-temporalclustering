@@ -100,7 +100,7 @@ We measured how well each feature distinguishes between conversation clusters us
 | Conversation features | 0.016 - 0.070 | **Weak** - signal washed out by averaging |
 | Tutor features | 0.001 - 0.009 | **Negligible** - tutors don't drive patterns |
 
-**Translation**: Student message timing patterns explain 60.8% of the differences between conversation types. Tutor patterns explain less than 1%. When you average them together (conversation-level), you lose 87% of the signal.
+**Translation**: Student message timing patterns explain 60.8% of the differences between conversation types. Tutor patterns explain less than 1%. When we average them together (conversation-level), we lose 87% of the signal.
 
 #### Which Features Matter Most?
 
@@ -123,7 +123,7 @@ We measured how well each feature distinguishes between conversation clusters us
 - `memory_coefficient_tutor`: η² = 0.001
 - `response_acceleration_tutor`: η² = 0.001
 
-**Bottom line**: If you want to classify conversation types, measure the student's burst coefficient and timing consistency. Tutor behavior won't help.
+**Bottom line**: To classify conversation types, we should measure the student's burst coefficient and timing consistency. Tutor behavior provides no discriminative power.
 
 *Note: Cluster density requires dense, sustained messaging for sliding window analysis. Students typically send only 3-8 messages spread across the conversation, making this metric non-computable for 99.6% of conversations.
 
@@ -150,24 +150,24 @@ The clustering discovered two distinct ways students engage temporally. This is 
 The negligible effect sizes for tutor features (η² < 0.01) reveal that tutors don't impose a temporal structure. Instead:
 
 - **Tutors match student pacing** - whether the student is bursty or steady, tutors adapt
-- **No tutor "signature" exists** - you can't identify conversation types by tutor timing
+- **No tutor "signature" exists** - we cannot identify conversation types by tutor timing
 - **Flexibility appears to be a feature of good tutoring** - responsive rather than rigid
 
 This aligns with pedagogical best practices: effective tutors follow the student's lead rather than imposing their own rhythm.
 
 ### 3. Conversation-Level Analysis Destroys 87% of the Signal
 
-When you average student and tutor timing together (traditional approach), the student signal gets washed out:
+When we average student and tutor timing together (traditional approach), the student signal gets washed out:
 
-| Analysis Approach | Burst Coefficient η² | What You Learn |
+| Analysis Approach | Burst Coefficient η² | What We Learn |
 |------------------|---------------------|----------------|
 | **Student-only** | **0.608** | 60.8% of variance explained - strong signal |
 | **Conversation-level** | 0.070 | 7% of variance explained - weak signal |
-| **Signal loss** | **87%** | You lose almost all information |
+| **Signal loss** | **87%** | We lose almost all information |
 
-**Why this happens**: Tutors maintain relatively constant pacing across all conversations (they adapt). Students vary dramatically. When you average constant + variable, you get moderate - which obscures the real driver.
+**Why this happens**: Tutors maintain relatively constant pacing across all conversations (they adapt). Students vary dramatically. When we average constant + variable, we get moderate - which obscures the real driver.
 
-**Analogy**: It's like averaging the temperature near a space heater with the temperature far from it. You get "moderately warm" (weak signal) instead of discovering where the heat source actually is (strong signal).
+**Analogy**: It's like averaging the temperature near a space heater with the temperature far from it. We get "moderately warm" (weak signal) instead of discovering where the heat source actually is (strong signal).
 
 ## Visualizations
 
@@ -348,12 +348,12 @@ Our [power user data](power_user_analysis.md) shows high-volume tutors (100+ con
 
 **Use conversation-level features (5D)** when:
 - Roles are symmetric (peer collaboration, friend chat)
-- You believe both participants contribute equally
-- You want emergent interaction dynamics
+- We believe both participants contribute equally
+- We want to capture emergent interaction dynamics
 
 **Use role-specific features (15D)** when:
 - **Roles are asymmetric** (expert-novice, interviewer-interviewee, doctor-patient)
-- You want to know **who drives** the pattern
+- We want to know **who drives** the pattern
 - Power dynamics or expertise differences exist
 
 **Key insight from this analysis**: In tutoring, role decomposition reveals 87% more signal than conversation-level analysis. The student drives temporal patterns; averaging with tutor behavior destroys most of the signal.
