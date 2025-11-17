@@ -37,7 +37,6 @@ MEETING_NOTES*.md
 MEETING_NOTES*.pdf
 scripts/06_create_meeting_figures.py
 docs/hierarchical_structure_ideas.md
-docs/power_user_analysis.md
 
 # Claude Code
 .claude/
