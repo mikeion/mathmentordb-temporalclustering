@@ -12,11 +12,13 @@ ENV/
 data/raw/*.parquet
 data/processed/*.parquet
 
-# Results (can be regenerated)
-results/*.json
+# Results (can be regenerated, but small enough to include)
+# Uncomment if results get too large:
+# results/*.json
 
-# Figures (can be regenerated)
-figures/*/
+# Figures - include main analysis figures, exclude meeting figures
+figures/*/meeting/
+figures/*/private/
 
 # IDE
 .vscode/

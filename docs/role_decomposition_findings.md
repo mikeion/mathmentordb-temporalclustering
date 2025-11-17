@@ -91,25 +91,93 @@ When we compute temporal features at the conversation level (averaging tutor and
 
 This demonstrates why role-specific decomposition is critical for understanding dyadic interactions.
 
-## Visualizations
+## Visualizations & Interpretation
 
-The following figures are available in [`figures/2023_conversations_two-participants/role_15d/`](../figures/2023_conversations_two-participants/role_15d/):
+The following figures demonstrate the role decomposition findings. All figures are available in [`figures/2023_conversations_two-participants/role_15d/`](../figures/2023_conversations_two-participants/role_15d/).
 
-1. **[figure1_effect_size_comparison.png](../figures/2023_conversations_two-participants/role_15d/figure1_effect_size_comparison.png)**
-   - Bar chart comparing effect sizes across student, tutor, and conversation features
-   - Shows dramatic difference between student (high) vs tutor (negligible) effects
+### Figure 1: Effect Size Comparison - The Core Finding
 
-2. **[figure2_feature_profiles.png](../figures/2023_conversations_two-participants/role_15d/figure2_feature_profiles.png)**
-   - Heatmap of mean feature values for each cluster
-   - Reveals which features distinguish the 2 clusters
+![Effect Size Comparison](../figures/2023_conversations_two-participants/role_15d/figure1_effect_size_comparison.png)
 
-3. **[figure3_cluster_overview.png](../figures/2023_conversations_two-participants/role_15d/figure3_cluster_overview.png)**
-   - Cluster size distribution and quality metrics
-   - Shows 93% vs 7% split between clusters
+**What you're seeing**: Bar chart showing effect sizes (η²) for each temporal feature, grouped by role (Student, Tutor, Conversation).
 
-4. **[figure4_role_decomposition.png](../figures/2023_conversations_two-participants/role_15d/figure4_role_decomposition.png)**
-   - Conceptual diagram showing 5D → 15D decomposition
-   - Illustrates signal loss in conversation-level features
+**Key observations**:
+- **Green bars (Student)**: Two features tower above everything else
+  - Burst Coefficient Student: η² = 0.608 (explains 60.8% of variance!)
+  - Timing Consistency Student: η² = 0.478 (explains 47.8% of variance)
+- **Red bars (Tutor)**: Barely visible - all < 0.01 (less than 1% of variance)
+- **Blue bars (Conversation)**: Moderate at 0.070, but only 11% of the student signal strength
+
+**Interpretation**: This is the smoking gun. Student burst patterns (whether they send messages in rapid bursts vs steady streams) are THE defining feature of conversation types. Tutor patterns are essentially noise. When you average students and tutors together (conversation-level), you lose 87% of the signal.
+
+**Practical implication**: If you want to predict what "type" of conversation this is, measure the student's burst coefficient. Tutor behavior won't help you.
+
+---
+
+### Figure 2: Feature Profiles - What Distinguishes the Clusters?
+
+![Feature Profiles](../figures/2023_conversations_two-participants/role_15d/figure2_feature_profiles.png)
+
+**What you're seeing**: Heatmap showing mean values for all 15 features across the 2 clusters. Green = higher values, Red = lower values. Numbers show actual (non-normalized) values.
+
+**Key observations**:
+
+**Cluster 0 (93% of conversations)** - "Standard Engagement":
+- Student Burst Coefficient: 0.077 (slightly bursty)
+- Student Timing Consistency: 0.439 (moderate regularity)
+- Shows typical variability in student pacing
+
+**Cluster 1 (7% of conversations)** - "Steady & Consistent":
+- Student Burst Coefficient: -0.942 (extremely anti-bursty, very steady flow)
+- Student Timing Consistency: 0.968 (nearly perfect regularity)
+- Students maintain remarkably consistent message timing
+
+**Notice**: The tutor rows (middle section) show similar values across both clusters - confirming tutors don't drive the distinction.
+
+**Interpretation**:
+- Cluster 1 students send messages like clockwork - steady, predictable intervals
+- Cluster 0 students are more variable - sometimes quick replies, sometimes gaps
+- This could indicate Cluster 1 = highly engaged/focused students, or students working through structured problem sets
+- Cluster 0 = natural conversational ebb and flow
+
+**Research question**: Does Cluster 1's consistency predict better learning outcomes? Or does it just reflect certain types of problems (e.g., working through a problem set vs exploratory conversation)?
+
+---
+
+### Figure 4: Role Decomposition - Why 15D Beats 5D
+
+![Role Decomposition Diagram](../figures/2023_conversations_two-participants/role_15d/figure4_role_decomposition.png)
+
+**What you're seeing**: Conceptual diagram showing how 5 conversation-level features decompose into 15 role-specific features, with effect sizes shown.
+
+**The flow**:
+1. **Top (5D Conversation Features)**: Traditional approach - compute burst coefficient, timing consistency, etc. across the entire conversation
+2. **Arrow down**: Decompose by role
+3. **Bottom level (15D)**:
+   - Red box (Tutor): η² < 0.01 - negligible
+   - Blue box (Conversation): η² ≈ 0.07 - weak
+   - Green box (Student): η² > 0.4 - strong (highlighted in yellow)
+
+**Key insight in the text box**: "Conversation-level features (5D) wash out the student signal by averaging"
+
+**Interpretation**:
+When you compute burst coefficient for the whole conversation, you're averaging the tutor's near-constant message rate with the student's highly variable rate. This averaging destroys most of the signal.
+
+**Analogy**: Imagine measuring temperature in a room with a space heater.
+- 5D approach: Average temperature across the whole room = "moderately warm" (η² = 0.07)
+- 15D approach: Measure near the heater vs far from it separately = reveals the heater location (η² = 0.608)
+
+**Methodological lesson**: In asymmetric interactions (expert-novice, interviewer-interviewee, etc.), always decompose features by role before analyzing. Aggregate statistics mask the real dynamics.
+
+---
+
+### Summary: How to Read These Figures Together
+
+1. **Figure 1** proves students drive patterns (not tutors)
+2. **Figure 2** characterizes what those patterns are (steady vs variable)
+3. **Figure 4** explains why previous conversation-level analyses missed this
+
+Together, they tell a complete story: Student temporal behavior defines conversation types, specifically whether students maintain steady or bursty message patterns. Tutors adapt rather than impose structure. Traditional conversation-level analysis obscures this by averaging.
 
 ## Clustering Results
 

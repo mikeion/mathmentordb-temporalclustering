@@ -1,0 +1,686 @@
+{
+  "cluster_outcomes": [
+    {
+      "cluster": 0,
+      "n_conversations": 6474,
+      "percentage": 92.96381390005743,
+      "mean_messages": 22.66373185047884,
+      "median_messages": 13.0,
+      "std_messages": 28.974599444736555,
+      "mean_duration_minutes": 25.423537740706415,
+      "median_duration_minutes": 14.641666666666666
+    },
+    {
+      "cluster": 1,
+      "n_conversations": 490,
+      "percentage": 7.0361860999425625,
+      "mean_messages": 4.587755102040816,
+      "median_messages": 4.0,
+      "std_messages": 2.185996766281398,
+      "mean_duration_minutes": 28.82510204081633,
+      "median_duration_minutes": 10.0
+    }
+  ],
+  "sample_conversations": [
+    {
+      "conversation_id": 200966.0,
+      "cluster": 0,
+      "n_messages": 7,
+      "duration_minutes": 7.883333333333334,
+      "messages": [
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-23 20:30:59+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-23 20:35:43+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-23 20:35:50+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-23 20:37:02+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-23 20:38:11+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-23 20:38:22+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-23 20:38:52+00:00"
+        }
+      ]
+    },
+    {
+      "conversation_id": 85963.0,
+      "cluster": 0,
+      "n_messages": 39,
+      "duration_minutes": 37.85,
+      "messages": [
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-24 17:09:08+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "I\u2019m struggling to find the correct derivative of ln((n-4)/4) to use l\u2019H\u00f4pital\u2019s rule",
+          "timestamp": "2023-01-24 17:09:58+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Could someone give me a tip on an optimal way to derive ln((n-4)/4) please? Thanks\ud83d\ude4c\ud83c\udffc",
+          "timestamp": "2023-01-24 17:10:32+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "Do you mean ln((n-4)/n) ?",
+          "timestamp": "2023-01-24 17:11:48+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Yes sorry for the excessive usage of brackets",
+          "timestamp": "2023-01-24 17:12:01+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Wait",
+          "timestamp": "2023-01-24 17:12:13+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "No",
+          "timestamp": "2023-01-24 17:12:16+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Oh yeah Lool",
+          "timestamp": "2023-01-24 17:12:38+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "I do mean that",
+          "timestamp": "2023-01-24 17:12:44+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Soz",
+          "timestamp": "2023-01-24 17:12:45+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Struggling to derive that",
+          "timestamp": "2023-01-24 17:12:58+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "OK, note that (n-4)/n = 1 -4/n. It's not a necessary step, but will make things easier",
+          "timestamp": "2023-01-24 17:13:44+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Aha okay",
+          "timestamp": "2023-01-24 17:14:07+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "Then take the derivative of the log and use chain rule",
+          "timestamp": "2023-01-24 17:14:42+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Right",
+          "timestamp": "2023-01-24 17:15:03+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Let me try that",
+          "timestamp": "2023-01-24 17:15:06+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "So you see for the chain rule",
+          "timestamp": "2023-01-24 17:16:16+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "How exactly would that be useful here?",
+          "timestamp": "2023-01-24 17:16:23+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "And I know when I derive this I should see 4 as the numerator and I\u2019m not",
+          "timestamp": "2023-01-24 17:17:03+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "Can you show your work?",
+          "timestamp": "2023-01-24 17:21:29+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Wait a sec",
+          "timestamp": "2023-01-24 17:23:44+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "Is this correct",
+          "timestamp": "2023-01-24 17:23:47+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-24 17:24:13+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "I think it should be -4/n^2",
+          "timestamp": "2023-01-24 17:26:58+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "why is that?",
+          "timestamp": "2023-01-24 17:28:57+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "Because you differentiate 1-4/n",
+          "timestamp": "2023-01-24 17:29:45+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "what about when we took the log",
+          "timestamp": "2023-01-24 17:30:01+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "right",
+          "timestamp": "2023-01-24 17:30:03+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "which is 4/n^2",
+          "timestamp": "2023-01-24 17:30:23+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "but don't we multiply the chain with the log?",
+          "timestamp": "2023-01-24 17:30:36+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "like the derivative of the log itself",
+          "timestamp": "2023-01-24 17:30:46+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "wdym?",
+          "timestamp": "2023-01-24 17:35:08+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "so",
+          "timestamp": "2023-01-24 17:37:08+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "d/dn ln(1-4/n)",
+          "timestamp": "2023-01-24 17:37:26+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "= 1/(1-4/n)",
+          "timestamp": "2023-01-24 17:37:46+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "*",
+          "timestamp": "2023-01-24 17:37:49+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "-4/n^2",
+          "timestamp": "2023-01-24 17:38:17+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "which equals to 4/(n^2-4n)",
+          "timestamp": "2023-01-24 17:38:51+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": ".close",
+          "timestamp": "2023-01-24 17:46:59+00:00"
+        }
+      ]
+    },
+    {
+      "conversation_id": 110881.0,
+      "cluster": 0,
+      "n_messages": 4,
+      "duration_minutes": 1.3,
+      "messages": [
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-31 20:12:56+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-31 20:13:46+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-31 20:14:05+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-31 20:14:14+00:00"
+        }
+      ]
+    },
+    {
+      "conversation_id": 121387.0,
+      "cluster": 0,
+      "n_messages": 4,
+      "duration_minutes": 1.3666666666666667,
+      "messages": [
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-24 06:47:49+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-24 06:48:15+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-24 06:49:05+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-24 06:49:11+00:00"
+        }
+      ]
+    },
+    {
+      "conversation_id": 131522.0,
+      "cluster": 0,
+      "n_messages": 39,
+      "duration_minutes": 15.516666666666667,
+      "messages": [
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 18:52:52+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 18:53:10+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:53:24+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 18:53:30+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:53:52+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 18:54:02+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 18:54:10+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 18:54:18+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:54:30+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 18:54:42+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:54:57+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 18:55:32+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 18:56:03+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:56:12+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:56:35+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:56:56+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:58:04+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 18:58:17+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:58:33+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:58:40+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 18:59:51+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 19:01:08+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 19:01:26+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 19:02:36+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 19:03:07+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 19:03:41+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 19:03:50+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 19:05:41+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 19:05:52+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 19:06:08+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 19:06:17+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 19:06:30+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 19:06:36+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 19:07:00+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 19:07:23+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-25 19:08:02+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 19:08:12+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 19:08:14+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-25 19:08:23+00:00"
+        }
+      ]
+    },
+    {
+      "conversation_id": 130268.0,
+      "cluster": 1,
+      "n_messages": 4,
+      "duration_minutes": 1.4333333333333333,
+      "messages": [
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-19 01:22:39+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-19 01:23:01+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-19 01:23:55+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-19 01:24:05+00:00"
+        }
+      ]
+    },
+    {
+      "conversation_id": 166970.0,
+      "cluster": 1,
+      "n_messages": 3,
+      "duration_minutes": 16.216666666666665,
+      "messages": [
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-14 03:07:30+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-14 03:08:20+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-14 03:23:43+00:00"
+        }
+      ]
+    },
+    {
+      "conversation_id": 124737.0,
+      "cluster": 1,
+      "n_messages": 3,
+      "duration_minutes": 3.35,
+      "messages": [
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-02-01 06:18:50+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-02-01 06:18:54+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-02-01 06:22:11+00:00"
+        }
+      ]
+    },
+    {
+      "conversation_id": 146249.0,
+      "cluster": 1,
+      "n_messages": 3,
+      "duration_minutes": 50.31666666666667,
+      "messages": [
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-08 19:05:01+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-08 19:05:25+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-08 19:55:20+00:00"
+        }
+      ]
+    },
+    {
+      "conversation_id": 124539.0,
+      "cluster": 1,
+      "n_messages": 10,
+      "duration_minutes": 17.05,
+      "messages": [
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-13 21:49:39+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-13 21:50:11+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-13 21:51:02+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-13 21:52:01+00:00"
+        },
+        {
+          "role": "unknown",
+          "content": "",
+          "timestamp": "2023-01-13 21:52:51+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-13 22:03:05+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-13 22:03:34+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-13 22:04:32+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-13 22:06:27+00:00"
+        },
+        {
+          "role": "tutor",
+          "content": "",
+          "timestamp": "2023-01-13 22:06:42+00:00"
+        }
+      ]
+    }
+  ]
+}
