@@ -1,19 +1,22 @@
 #!/usr/bin/env python3
 """
-Temporal Clustering Analysis
+Role-Level Temporal Clustering Analysis
 
-This script:
-1. Determines optimal number of clusters (k=2-15) using 5 metrics
-2. Compares DBSCAN vs hierarchical vs K-means
-3. Applies final clustering with best method
-4. Computes cluster statistics and effect sizes
-5. Saves results for visualization
+This script performs clustering analysis on role-specific temporal features (15D):
+- 5 conversation-level features (BC, CD, RA, MC, TC)
+- 5 tutor-level features (BC_tutor, CD_tutor, RA_tutor, MC_tutor, TC_tutor)
+- 5 student-level features (BC_student, CD_student, RA_student, MC_student, TC_student)
 
-Input: data/processed/*_features.parquet
-Output: results/clustering_results.json
+This enables discovery of more nuanced temporal archetypes like:
+- "Student-Led Bursts" (high BC_student, low BC_tutor)
+- "Tutor-Led Bursts" (high BC_tutor, low BC_student)
+- "Symmetric Engagement" (similar BC_tutor and BC_student)
+
+Input: data/processed/*_role_features.parquet
+Output: results/*_role_clustering_results.json
 
 Usage:
-    python scripts/02_cluster_analysis.py
+    python scripts/02b_cluster_analysis_role.py
 """
 
 import sys
@@ -73,20 +76,9 @@ def compute_gap_statistic(X, k_range, n_refs=10, random_state=42):
 def determine_optimal_k(X_scaled, k_range=range(2, 16)):
     """
     Use 5 different metrics to determine optimal k.
-    Here I'm testing k=2 through k=15 with 5 different metrics:
-    - silhouette score: how well separated are clusters (-1 to +1, higher is better)
-    - calinski_harabasz score: ratio of between-cluster dispersion to within-cluster dispersion (higher is better)
-    - davies_bouldin score: average similarity between clusters (lower is better)
-    - gap statistic: comparison of within-cluster dispersion to random data (higher is better)
-
-    Then I'm using a consensus approach to determine the optimal k by majority vote. Looks like it ended up picking k=2 with
-    two of them agreeing on this (gap and C-H), silouhette got 3, davies-bouldin got 10.
-
-    I think this is where it's suggesting hierarchical structure and not the flat clusters..
-
     """
     logger.info("\n" + "="*80)
-    logger.info("DETERMINING OPTIMAL NUMBER OF CLUSTERS")
+    logger.info("DETERMINING OPTIMAL NUMBER OF CLUSTERS (ROLE-LEVEL FEATURES)")
     logger.info("="*80)
 
     results = {'k': [], 'inertia': [], 'silhouette': [], 'calinski_harabasz': [],
@@ -146,24 +138,9 @@ def determine_optimal_k(X_scaled, k_range=range(2, 16)):
 # SECTION 2: METHOD COMPARISON
 # ==============================================================================
 
-
-
-
-
 def compare_clustering_methods(X_scaled, optimal_k=6):
     """
     Compare DBSCAN vs hierarchical vs K-means.
-
-    DBSCAN: We're doing grid search over eps x min_samples.. in this case we have 24 configs..
-
-    Hierarchical: It crashed on my computer with 184k conversations, think we need more ram for this.
-
-    K-means (centroid based, spherical clusters): works well on large datasets.
-
-    This chooses the one best based on the siloutte score!!
-
-    
-
     """
     logger.info("\n" + "="*80)
     logger.info("COMPARING CLUSTERING METHODS")
@@ -290,10 +267,6 @@ def apply_final_clustering(X_scaled, method='kmeans', k=6):
 def compute_cluster_statistics(df, labels, feature_cols):
     """
     Compute statistics and effect sizes for each cluster.
-
-    We end up computing mean features (BC, CD, etc.) for each cluster.
-    cluster size and percentage, effect size, f-stats and p-values.
-
     """
     logger.info("\n" + "="*80)
     logger.info("CLUSTER STATISTICS & VALIDATION")
@@ -352,12 +325,12 @@ def main():
     project_dir = script_dir.parent
     processed_dir = project_dir / "data" / "processed"
 
-    # Find the most recent features file
-    feature_files = list(processed_dir.glob("*_features.parquet"))
+    # Find the most recent role_features file
+    feature_files = list(processed_dir.glob("*_role_features.parquet"))
 
     if not feature_files:
-        logger.error(f"No feature files found in {processed_dir}")
-        logger.error("Run 01_extract_features.py first!")
+        logger.error(f"No role_features files found in {processed_dir}")
+        logger.error("Run 01b_extract_role_features.py first!")
         return 1
 
     # Use the most recently modified features file
@@ -365,16 +338,28 @@ def main():
     logger.info(f"Using features from: {input_file.name}")
 
     # Extract dataset name from features file
-    dataset_name = input_file.stem.replace('_features', '')
-    output_file = project_dir / "results" / f"{dataset_name}_clustering_results.json"
+    dataset_name = input_file.stem.replace('_role_features', '')
+    output_file = project_dir / "results" / f"{dataset_name}_role_clustering_results.json"
 
     # Load features
     logger.info(f"Loading features from {input_file.name}")
     df = pd.read_parquet(input_file)
     logger.info(f"Loaded {len(df):,} conversations")
 
-    feature_cols = ['burst_coefficient', 'cluster_density', 'response_acceleration',
-                    'memory_coefficient', 'timing_consistency']
+    # Role-level feature columns (15 total)
+    feature_cols = [
+        # Conversation-level (5)
+        'burst_coefficient', 'cluster_density', 'response_acceleration',
+        'memory_coefficient', 'timing_consistency',
+        # Tutor-level (5)
+        'burst_coefficient_tutor', 'cluster_density_tutor', 'response_acceleration_tutor',
+        'memory_coefficient_tutor', 'timing_consistency_tutor',
+        # Student-level (5)
+        'burst_coefficient_student', 'cluster_density_student', 'response_acceleration_student',
+        'memory_coefficient_student', 'timing_consistency_student'
+    ]
+
+    logger.info(f"\nFeature dimensionality: {len(feature_cols)}D (5 conv + 5 tutor + 5 student)")
 
     X = df[feature_cols].values
 
@@ -401,7 +386,9 @@ def main():
             'n_conversations': len(df),
             'n_clusters': optimal_k,
             'method': best_method,
-            'feature_columns': feature_cols
+            'feature_columns': feature_cols,
+            'feature_type': 'role_specific',
+            'n_dimensions': len(feature_cols)
         },
         'optimal_k_analysis': optimal_k_df.to_dict(orient='records'),
         'method_comparison': method_comparison,

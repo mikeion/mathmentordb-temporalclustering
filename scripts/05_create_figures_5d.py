@@ -288,6 +288,105 @@ def create_summary_table(cluster_stats, effect_sizes, output_dir):
     plt.close()
 
 
+def plot_method_comparison(method_comparison, optimal_k, output_dir):
+    """
+    Create a comparison figure showing silhouette scores for different clustering methods.
+    """
+    logger.info("Creating Method Comparison figure...")
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
+
+    # Panel 1: Bar chart comparing methods
+    methods = []
+    silhouettes = []
+    n_clusters = []
+    colors_map = {'kmeans': '#4472C4', 'hierarchical': '#ED7D31', 'dbscan': '#70AD47'}
+    colors = []
+
+    if method_comparison.get('kmeans'):
+        methods.append('K-means')
+        silhouettes.append(method_comparison['kmeans']['silhouette'])
+        n_clusters.append(method_comparison['kmeans']['n_clusters'])
+        colors.append(colors_map['kmeans'])
+
+    if method_comparison.get('hierarchical'):
+        methods.append('Hierarchical')
+        silhouettes.append(method_comparison['hierarchical']['silhouette'])
+        n_clusters.append(method_comparison['hierarchical']['n_clusters'])
+        colors.append(colors_map['hierarchical'])
+
+    if method_comparison.get('dbscan') and method_comparison['dbscan']:
+        methods.append('DBSCAN')
+        silhouettes.append(method_comparison['dbscan']['silhouette'])
+        n_clusters.append(int(method_comparison['dbscan']['n_clusters']))
+        colors.append(colors_map['dbscan'])
+
+    bars = ax1.barh(methods, silhouettes, color=colors, edgecolor='black', linewidth=1.5)
+
+    # Highlight the recommended method
+    recommended = method_comparison.get('recommended', 'kmeans')
+    for i, method in enumerate(methods):
+        if method.lower() == recommended:
+            bars[i].set_linewidth(3)
+            bars[i].set_edgecolor('red')
+
+    ax1.set_xlabel('Silhouette Score', fontsize=13, fontweight='bold')
+    ax1.set_title('Clustering Method Comparison', fontsize=14, fontweight='bold')
+    ax1.set_xlim(0, max(silhouettes) * 1.15)
+
+    # Add value labels and cluster counts
+    for i, (sil, k) in enumerate(zip(silhouettes, n_clusters)):
+        ax1.text(sil + 0.005, i, f'{sil:.3f}\n(k={k})',
+                va='center', fontsize=10, fontweight='bold')
+
+    ax1.grid(axis='x', alpha=0.3)
+
+    # Panel 2: Summary table
+    ax2.axis('tight')
+    ax2.axis('off')
+
+    table_data = []
+    for method, sil, k in zip(methods, silhouettes, n_clusters):
+        row = [method, f'{k}', f'{sil:.4f}']
+        table_data.append(row)
+
+    # Add recommendation marker
+    rec_idx = [m.lower() for m in methods].index(recommended)
+    table_data[rec_idx][0] = f'{table_data[rec_idx][0]} ★'
+
+    columns = ['Method', 'Clusters', 'Silhouette']
+    table = ax2.table(cellText=table_data, colLabels=columns,
+                     cellLoc='center', loc='center',
+                     colColours=['lightgray']*3)
+
+    table.auto_set_font_size(False)
+    table.set_fontsize(11)
+    table.scale(1, 3)
+
+    # Style header
+    for i in range(len(columns)):
+        table[(0, i)].set_facecolor('#4472C4')
+        table[(0, i)].set_text_props(weight='bold', color='white', fontsize=12)
+
+    # Highlight recommended row
+    for i in range(len(columns)):
+        table[(rec_idx + 1, i)].set_facecolor('#FFE699')
+        table[(rec_idx + 1, i)].set_text_props(weight='bold')
+
+    ax2.set_title(f'Selected Method: {recommended.upper()} (★)\n'
+                  f'Optimal k = {optimal_k}',
+                  fontsize=13, fontweight='bold', pad=20)
+
+    plt.suptitle('Clustering Method Selection', fontsize=16, fontweight='bold', y=0.98)
+    plt.tight_layout()
+
+    output_file = output_dir / 'figure0_method_comparison.png'
+    plt.savefig(output_file, dpi=300, bbox_inches='tight')
+    plt.savefig(output_dir / 'figure0_method_comparison.pdf', bbox_inches='tight')
+    logger.info(f"Saved: {output_file.name}")
+    plt.close()
+
+
 def main():
     """Main execution."""
     script_dir = Path(__file__).parent
@@ -330,6 +429,8 @@ def main():
     labels = features_df['conversation_id'].map(cluster_assignments).values
 
     # Generate figures
+    plot_method_comparison(results['method_comparison'],
+                          results['metadata']['n_clusters'], output_dir)
     plot_optimal_k(results['optimal_k_analysis'], output_dir)
     plot_umap_clusters(features_df, labels, output_dir)
     plot_feature_comparison(results['cluster_statistics'], output_dir)
