@@ -15,7 +15,7 @@ This pipeline analyzes **when** messages occur in tutor-student conversations (n
 
 - Student message timing explains 60.8% of variance between conversation types
 - Tutor message timing explains <1%
-- Two student engagement archetypes: "Standard" (93%) and "Steady & Consistent" (7%)
+- Two student engagement archetypes: "Natural Flow" (93%) and "Methodical Worker" (7%)
 
 This suggests effective tutors adapt their pacing to student needs rather than imposing a fixed rhythm.
 
