@@ -363,9 +363,20 @@ def main():
 
     X = df[feature_cols].values
 
+    # Robust outlier handling: Winsorize extreme values
+    # Cap values at 1st and 99th percentiles to prevent single outliers from dominating
+    logger.info("\nApplying robust outlier handling (winsorization at 1st/99th percentiles)...")
+    X_robust = X.copy()
+    for i, col in enumerate(feature_cols):
+        p1, p99 = np.percentile(X[:, i], [1, 99])
+        n_clipped = ((X[:, i] < p1) | (X[:, i] > p99)).sum()
+        if n_clipped > 0:
+            logger.info(f"  {col}: clipped {n_clipped} values (range [{p1:.3f}, {p99:.3f}])")
+        X_robust[:, i] = np.clip(X[:, i], p1, p99)
+
     # Standardize
     scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X)
+    X_scaled = scaler.fit_transform(X_robust)
 
     # Step 1: Determine optimal k
     optimal_k_df, optimal_k = determine_optimal_k(X_scaled)

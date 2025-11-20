@@ -13,6 +13,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 
+# Try to import UMAP, but make it optional
+try:
+    import umap
+    HAS_UMAP = True
+except ImportError:
+    HAS_UMAP = False
+    print("Warning: umap-learn not installed. UMAP visualization will be skipped.")
+
 # Configure plotting style
 plt.style.use('seaborn-v0_8-darkgrid')
 sns.set_palette("Set2")
@@ -188,6 +196,76 @@ def create_feature_profiles(results, features_df, output_dir):
     plt.close()
 
     print(f"✓ Saved: figure2_feature_profiles (PNG + PDF)")
+
+def create_umap_visualization(features_df, output_dir):
+    """
+    Figure 2b: UMAP projection showing cluster separation
+
+    Projects 15D role-specific features into 2D using UMAP to visualize
+    how well the two clusters separate in feature space.
+    """
+    if not HAS_UMAP:
+        print("⚠ Skipping UMAP visualization (umap-learn not installed)")
+        return
+
+    # Get feature columns (exclude metadata)
+    feature_cols = [col for col in features_df.columns
+                   if col not in ['conversation_id', 'cluster']]
+
+    X = features_df[feature_cols].values
+    clusters = features_df['cluster'].values
+
+    # UMAP projection
+    print("  Computing UMAP projection (this may take a minute)...")
+    reducer = umap.UMAP(n_components=2, random_state=42,
+                       n_neighbors=15, min_dist=0.1)
+    embedding = reducer.fit_transform(X)
+
+    # Create figure
+    fig, ax = plt.subplots(figsize=(10, 8))
+
+    # Get cluster labels
+    unique_clusters = sorted(np.unique(clusters))
+    colors = sns.color_palette("Set2", len(unique_clusters))
+
+    # Cluster names matching our findings
+    cluster_names = {
+        0: "Natural Flow",
+        1: "Methodical Worker"
+    }
+
+    # Plot each cluster
+    for i, cluster_id in enumerate(unique_clusters):
+        mask = clusters == cluster_id
+        cluster_name = cluster_names.get(cluster_id, f"Cluster {cluster_id}")
+        n_points = mask.sum()
+        pct = 100 * n_points / len(clusters)
+
+        ax.scatter(embedding[mask, 0], embedding[mask, 1],
+                  c=[colors[i]], label=f'{cluster_name} (n={n_points:,}, {pct:.1f}%)',
+                  alpha=0.6, s=30, edgecolors='white', linewidth=0.5)
+
+    ax.set_xlabel('UMAP Dimension 1', fontsize=12, fontweight='bold')
+    ax.set_ylabel('UMAP Dimension 2', fontsize=12, fontweight='bold')
+    ax.set_title('15D Role-Specific Features: UMAP Projection by Cluster',
+                fontsize=14, fontweight='bold', pad=20)
+    ax.legend(loc='best', fontsize=11, framealpha=0.9)
+    ax.grid(alpha=0.3)
+
+    # Add interpretation box
+    textstr = 'Cluster separation based on:\n• Student temporal patterns (η²=0.608)\n• 15D role-decomposed features'
+    props = dict(boxstyle='round', facecolor='wheat', alpha=0.8)
+    ax.text(0.02, 0.98, textstr, transform=ax.transAxes, fontsize=10,
+           verticalalignment='top', bbox=props)
+
+    plt.tight_layout()
+
+    # Save
+    plt.savefig(output_dir / 'figure2b_umap_projection.png', dpi=300, bbox_inches='tight')
+    plt.savefig(output_dir / 'figure2b_umap_projection.pdf', bbox_inches='tight')
+    plt.close()
+
+    print(f"✓ Saved: figure2b_umap_projection (PNG + PDF)")
 
 def create_cluster_size_comparison(results, features_df, output_dir):
     """
@@ -391,6 +469,7 @@ def main():
 
     create_effect_size_comparison(results, output_dir)
     create_feature_profiles(results, features_df, output_dir)
+    create_umap_visualization(features_df, output_dir)
     create_cluster_size_comparison(results, features_df, output_dir)
     create_role_decomposition_diagram(results, output_dir)
 
@@ -399,6 +478,7 @@ def main():
     print("\nFigures created:")
     print("  • figure1_effect_size_comparison: Student vs Tutor vs Conversation η²")
     print("  • figure2_feature_profiles: Mean feature values per cluster (heatmap)")
+    print("  • figure2b_umap_projection: 2D UMAP projection showing cluster separation")
     print("  • figure3_cluster_overview: Cluster sizes and statistics")
     print("  • figure4_role_decomposition: Conceptual diagram of 5D→15D decomposition")
     print(f"\n{'='*60}\n")
