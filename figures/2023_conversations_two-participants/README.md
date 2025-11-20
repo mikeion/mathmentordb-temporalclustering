@@ -4,9 +4,9 @@ This directory contains two related analyses of the same dataset (6,964 tutor-st
 
 ---
 
-## 📁 Root Directory: 5D Conversation-Level Analysis
+## 📁 [conv_5d/](conv_5d/) - 5D Conversation-Level Analysis
 
-**Files:** `figure1-4.png` in this directory
+**Files:** `figure1-4.png` in `conv_5d/` subdirectory
 
 **Features:** 5 temporal metrics computed at the **conversation level** (aggregating both tutor and student):
 - Burst Coefficient (BC)
@@ -36,11 +36,11 @@ This directory contains two related analyses of the same dataset (6,964 tutor-st
 
 ## Which Analysis Should I Look At?
 
-- **For conversation-level patterns**: Use root directory figures
-- **For role-specific patterns** (who drives temporal behavior): Use `role_15d/` figures
-- **For the main research finding** (student vs tutor effects): Use `role_15d/` figures
+- **For conversation-level patterns**: Use [conv_5d/](conv_5d/) figures
+- **For role-specific patterns** (who drives temporal behavior): Use [role_15d/](role_15d/) figures
+- **For the main research finding** (student vs tutor effects): Use [role_15d/](role_15d/) figures
 
-See [role_15d/README.md](role_15d/README.md) for detailed figure descriptions.
+See subdirectory README files for detailed figure descriptions.
 
 ---
 
