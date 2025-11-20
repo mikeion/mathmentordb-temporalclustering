@@ -16,7 +16,8 @@ data/processed/*.parquet
 # Uncomment if results get too large:
 # results/*.json
 
-# Figures - include main analysis figures, exclude meeting figures
+# Figures - keep PNGs for GitHub display, exclude PDFs (regenerate for papers)
+figures/**/*.pdf
 figures/*/meeting/
 figures/*/private/
 
